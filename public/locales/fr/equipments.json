@@ -1,0 +1,198 @@
+{
+  "equipments": {
+    "slots": {
+      "ring_right": "Anneau droit",
+      "ring_right_your": "ton Anneau droit",
+      "ring_left": "Anneau gauche",
+      "ring_left_your": "ton Anneau gauche",
+      "strap_right": "Bracelet droit",
+      "strap_right_your": "ton Bracelet droit",
+      "strap_left": "Bracelet gauche",
+      "strap_left_your": "ton Bracelet gauche",
+      "boots": "Bottes",
+      "boots_your": "tes Bottes",
+      "helmet": "Casque",
+      "helmet_your": "ton Casque",
+      "collar": "Collier",
+      "collar_your": "ton Collier",
+      "belt": "Ceinture",
+      "belt_your": "ta Ceinture",
+      "weapon": "Arme",
+      "weapon_your": "ton Arme"
+    },
+    "adventurer": {
+      "strap": {
+        "name_zero": "Bracelet de l'aventurier",
+        "name_one": "un Bracelet de l'aventurier",
+        "description": "Un petit bracelet sympathique pour les débutants, et qui amusera les jeunes enfants."
+      },
+      "collar": {
+        "name_zero": "Collier de l'aventurier",
+        "name_one": "un Collier de l'aventurier",
+        "description": "Pas très classe, pas très efficace, mais sympathique."
+      },
+      "boots": {
+        "name_zero": "Bottes de l'aventurier",
+        "name_one": "des Bottes de l'aventurier",
+        "description": "Bottes de simple facture mais idéales pour les jeunes se lançant sur le dur chemin de l'aventure."
+      },
+      "helmet": {
+        "name_zero": "Casque de l'aventurier",
+        "name_one": "un Casque de l'aventurier",
+        "description": "À part faire fuir les nanas, ce chapeau n'a pas vraiment grande utilité."
+      },
+      "belt": {
+        "name_zero": "Ceinture de l'aventurier",
+        "name_one": "une Ceinture de l'aventurier",
+        "description": "Une petite ceinture pour les aventuriers en herbe."
+      },
+      "weapon": {
+        "name_zero": "Dague de l'aventurier",
+        "name_one": "une Dague de l'aventurier",
+        "description": "Dague de simple facture, elle ne fera pas de votre héros une légende."
+      }
+    },
+    "herbalist": {
+      "belt": {
+        "name_zero": "Ceinture du Petit Herboriste",
+        "name_one": "la Ceinture du Petit Herboriste",
+        "description": "Une ceinture élégante qui vous rendra irrésistible auprès des amateurs de belles plantes."
+      },
+      "boots": {
+        "name_zero": "Sandales du Petit Herboriste",
+        "name_one": "les Sandales du Petit Herboriste",
+        "description": "Rien de mieux que d'utiliser des bottes confectionnées à partir de restes de fleurs champêtres, pour écraser ces misérables fleurs qui poussent dans vos champs."
+      },
+      "helmet": {
+        "name_zero": "Chapeau du Petit Herboriste",
+        "name_one": "le Chapeau du Petit Herboriste",
+        "description": "Ce chapeau semble murmurer à vos oreilles les secrets des plantes... ou c'est juste le vent qui siffle à travers les trous."
+      },
+      "weapon": {
+        "name_zero": "Gant du Petit Herboriste",
+        "name_one": "un Gant du Petit Herboriste",
+        "description": "Si vous aviez peur de vous faire piquer par des orties, ces gants n'y changeront rien."
+      }
+    },
+    "little_blacksmith": {
+      "collar": {
+        "name_zero": "Collier du Petit Forgeron",
+        "name_one": "le Collier du Petit Forgeron",
+        "description": "Ce collier porte fièrement une enclume miniature. Ça donne du caractère, et des douleurs cervicales."
+      },
+      "ring": {
+        "name_zero": "Bague du Petit Forgeron",
+        "name_one": "la Bague du Petit Forgeron",
+        "description": "Porter des bagues ce n'est pas un défaut de style, c'est surtout utile quand on vise mal avec son marteau."
+      },
+      "weapon": {
+        "name_zero": "Marteau du Petit Forgeron",
+        "name_one": "le Marteau du Petit Forgeron",
+        "description": "Légendaire pour avoir forgé... absolument rien d'exceptionnel. Mais il est joli, non ?"
+      },
+      "strap": {
+        "name_zero": "Bracelet du Petit Forgeron",
+        "name_one": "le Bracelet du Petit Forgeron",
+        "description": "Ce bracelet ajoute un poil de style à votre poignet. Assez pour distraire les clients de vos créations bancales."
+      }
+    },
+    "marine": {
+      "collar": {
+        "name_zero": "Collier du Marine",
+        "name_one": "un Collier du Marine",
+        "description": "Un collier en corde, parfait si jamais on aurait besoin de vous exécuter dans les plus brefs délais."
+      },
+      "ring": {
+        "name_zero": "Bague du Marine",
+        "name_one": "une Bague du Marine",
+        "description": "Issue d'une technologie supérieure, cette bague imperméabilisée tiendra vos doigts au sec en toutes circonstances."
+      },
+      "helmet": {
+        "name_zero": "Chapeau du Marine",
+        "name_one": "un Chapeau du Marine",
+        "description": "Cette casquette vous donnera l'allure d'un vrai capitaine de navire qui aurait coulé."
+      },
+      "strap": {
+        "name_zero": "Bracelet du Marine",
+        "name_one": "un Bracelet du Marine",
+        "description": "Ce bracelet aurait appartenu à un grand explorateur. En tout cas, c'est ce que le vendeur vous a dit."
+      }
+    },
+    "pirate": {
+      "weapon": {
+        "name_zero": "Pistolet du Pirate",
+        "name_one": "un Pistolet du Pirate",
+        "description": "A quoi bon posséder une arme à feu quand on n'a pas l'argent pour se payer les balles qui vont avec."
+      },
+      "ring": {
+        "name_zero": "Bague du Pirate",
+        "name_one": "une Bague du Pirate",
+        "description": "Cette bague montre votre appartenance à un groupuscule peu recommandable, pilleur, voleur, truand, et occasionnellement pirate."
+      },
+      "helmet": {
+        "name_zero": "Chapeau du Pirate",
+        "name_one": "un Chapeau du Pirate",
+        "description": "Plus chic qu'un chapeau à plume, ce chapeau pirate vous énoncera l'emplacement de nombreux trésors cachés dans les mers. Malheureusement, comme vous serez le seul à entendre sa voix, tout le monde vous prendra pour un fou."
+      },
+      "belt": {
+        "name_zero": "Ceinture du Pirate",
+        "name_one": "une Ceinture du Pirate",
+        "description": "Cette ceinture était la propriété d'un grand pirate. On raconte que lui et son équipage furent condamnés à être transformés en fantômes et squelettes suite à une mystérieuse malédiction qui aurait touché son bateau..."
+      }
+    },
+    "revolutionary": {
+      "boots": {
+        "name_zero": "Bottes du Révolutionnaire",
+        "name_one": "des Bottes du Révolutionnaire",
+        "description": "Des bottes, tout ce qu'il y a de plus normal, mais vertes."
+      },
+      "ring": {
+        "name_zero": "Bague du Révolutionnaire",
+        "name_one": "une Bague du Révolutionnaire",
+        "description": "Bijou offert de mère en fils montrant la pauvreté de votre famille. En effet cette bague ne vaut pas plus qu'un merlan frit."
+      },
+      "helmet": {
+        "name_zero": "Bandeau du Révolutionnaire",
+        "name_one": "un Bandeau du Révolutionnaire",
+        "description": "Ce bandeau vous fait plus passer pour un mécanicien du dimanche que pour un combattant de la liberté."
+      },
+      "belt": {
+        "name_zero": "Ceinture du Révolutionnaire",
+        "name_one": "une Ceinture du Révolutionnaire",
+        "description": "Tout révolutionnaire digne de ce nom se doit d'avoir une ceinture qui affirme ses envies de liberté et de justice. Celle-ci affirme votre envie de transition écologique tout au plus."
+      }
+    },
+    "christmas": {
+      "strap": {
+        "name_zero": "Bracelet de Noël",
+        "name_one": "un Bracelet de Noël",
+        "description": "Un petit bracelet sympathique pour les débutants, et qui amusera les jeunes enfants."
+      },
+      "collar": {
+        "name_zero": "Collier de Noël",
+        "name_one": "un Collier de Noël",
+        "description": "Pas très classe, pas très efficace, mais sympathique."
+      },
+      "boots": {
+        "name_zero": "Bottes de Noël",
+        "name_one": "des Bottes de Noël",
+        "description": "Bottes de simple facture mais idéales pour les jeunes se lançant sur le dur chemin de l'aventure."
+      },
+      "helmet": {
+        "name_zero": "Bonnet de Noël",
+        "name_one": "un Bonnet de Noël",
+        "description": "À part faire fuir les nanas, ce chapeau n'a pas vraiment grande utilité."
+      },
+      "belt": {
+        "name_zero": "Ceinture de Noël",
+        "name_one": "une Ceinture de Noël",
+        "description": "Une petite ceinture pour les aventuriers en herbe."
+      },
+      "weapon": {
+        "name_zero": "Canne de Noël",
+        "name_one": "une Canne de Noël",
+        "description": "Dagues de simple facture, elles ne feront pas de votre héros une légende."
+      }
+    }
+  }
+}

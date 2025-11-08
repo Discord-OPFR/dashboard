@@ -22,7 +22,6 @@
       "@/config/*": ["config/*"],
       "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
-      "@gatewatcher/skin": ["../.yalc/@gatewatcher/skin/dist"]
     }
   },
   "include": ["src", ".storybook"],

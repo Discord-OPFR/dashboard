@@ -14,7 +14,8 @@
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "lint:ts": "eslint . --ext=.ts,.tsx",
     "lint": "npm run lint:ts && npm run lint:scss",
-    "generate:assets": "npm run generate:icons",
+    "generate:assets": "npm run generate:icons && npm run generate:translations",
+    "generate:translations": "cp node_modules/@opfr/items/locales/items/fr.json public/locales/fr/items.json && cp node_modules/@opfr/items/locales/equipments/fr.json public/locales/fr/equipments.json",
     "generate:icons": "rm -rf src/components/icons && npx @svgr/cli --memo --no-dimensions --no-prettier --no-index --out-dir src/components/icons -- src/assets/icons && npx eslint src/components/icons --fix"
   },
   "dependencies": {
@@ -28,8 +29,8 @@
     "@opfr/utils-type": "0.18.7",
     "i18next": "25.6.1",
     "i18next-fetch-backend": "7.0.0",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-i18next": "16.2.4",
     "react-router-dom": "7.9.5"
   },
@@ -43,8 +44,8 @@
     "@svgr/cli": "8.1.0",
     "@trivago/prettier-plugin-sort-imports": "6.0.0",
     "@types/node": "24.6.0",
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
+    "@types/react": "18.3.26",
+    "@types/react-dom": "18.3.7",
     "@typescript-eslint/eslint-plugin": "8.46.3",
     "@typescript-eslint/parser": "8.46.3",
     "@vitejs/plugin-react": "5.0.4",

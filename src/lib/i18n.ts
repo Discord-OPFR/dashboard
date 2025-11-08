@@ -7,14 +7,6 @@ import { LOCALES_NAMESPACES } from '@/config/namespaces';
 import type { LocalesNamespaces } from '../types/namespaces';
 
 const localesPathBuilder = (lng: string, namespace: LocalesNamespaces) => {
-  if (namespace === 'equipments') {
-    return `node_modules/@opfr/items/locales/equipments/${lng}.json`;
-  } else if (namespace === 'items') {
-    return `node_modules/@opfr/items/locales/items/${lng}.json`;
-  } else if (namespace === 'raids') {
-    return `node_modules/@opfr/raids/locales/${lng}.json`;
-  }
-
   return `/locales/${lng}/${namespace}.json`;
 };
 

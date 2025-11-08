@@ -13,6 +13,9 @@ export default defineConfig({
       '@opfr': path.resolve(__dirname, 'node_modules/@opfr'),
     },
   },
+  optimizeDeps: {
+    include: ['@opfr'],
+  },
   server: {
     fs: {
       allow: ['../../Gatewatcher/skin', '..'],

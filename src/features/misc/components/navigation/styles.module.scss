@@ -4,8 +4,8 @@
   }
 
   &Logo {
-    height: 48px;
     min-width: 2.5rem;
+    height: 48px;
     transition: height 0.2s ease;
 
     &Closed {
@@ -19,10 +19,10 @@
   }
 
   &Title {
-    transition: transform 0.2s ease;
-    transform-origin: left;
-    transform: scaleX(1);
     overflow: hidden;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.2s ease;
 
     &Closed {
       width: 0;
