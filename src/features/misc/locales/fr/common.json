@@ -1,0 +1,10 @@
+{
+  "sideNav": {
+    "title": "OPFR",
+    "home": "Home",
+    "entity": "Entité"
+  },
+  "topNav": {
+    "title": "Dashboard"
+  }
+}
