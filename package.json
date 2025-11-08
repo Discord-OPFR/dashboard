@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install .husky",
     "dev": "concurrently \"npx vite --host\" \"npm run watch:features-locales\" \"npm run watch:sources-locales\"",
-    "build": "generate:assets && tsc -b && vite build",
+    "build": "npm run generate:assets && tsc -b && vite build",
     "watch:features-locales": "npx papaya locales:watch",
     "watch:sources-locales": "npx papaya locales:build",
     "fmt": "prettier --write \"src/**/*.{js,jsx,cjs,ts,tsx,json,css,scss,md}\"",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@gatewatcher/bistoury": "1.12.0",
-    "@gatewatcher/skin": "file:.yalc/@gatewatcher/skin",
+    "@gatewatcher/skin": "1.0.1",
     "@opfr/emojis": "0.16.0",
     "@opfr/items": "0.35.10",
     "@opfr/ornaments": "0.18.3",
