@@ -1,4 +1,9 @@
 {
+  "pages": {
+    "notFound": {
+      "title": ""
+    }
+  },
   "sideNav": {
     "title": "OPFR",
     "home": "Home",

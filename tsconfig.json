@@ -18,10 +18,14 @@
     "jsx": "react-jsx",
     "noImplicitThis": false,
     "paths": {
+      "@/assets/*": ["assets/images/*"],
+      "@/api": ["api/generated"],
       "@/components/*": ["components/*"],
       "@/config/*": ["config/*"],
       "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/modules/*": ["modules/*"],
+      "@/store/*": ["store/*"]
     }
   },
   "include": ["src", ".storybook"],

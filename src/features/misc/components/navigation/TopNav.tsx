@@ -1,5 +1,6 @@
+import { ProfileAvatar } from '@/features/misc/components/commons/ProfileAvatar';
 import { useLocales } from '@/hooks/useLocales';
-import { NavBar, ThemeSwitch, Title } from '@gatewatcher/skin';
+import { NavBar, Stack, ThemeSwitch, Title } from '@gatewatcher/skin';
 
 import { LanguageSelector } from '../commons/LanguageSelector';
 
@@ -9,10 +10,11 @@ export const TopNav = () => {
   return (
     <NavBar
       endElement={
-        <>
+        <Stack alignItems="center" gap={8}>
           <LanguageSelector />
           <ThemeSwitch />
-        </>
+          <ProfileAvatar />
+        </Stack>
       }
       startElement={
         <>

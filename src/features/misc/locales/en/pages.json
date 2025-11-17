@@ -1,0 +1,11 @@
+{
+  "notFound": {
+    "title": "Not found",
+    "description": "This page does not exist"
+  },
+  "unauthorized": {
+    "title": "Unauthorized",
+    "description": "You must be connected to continue",
+    "login": "Login"
+  }
+}

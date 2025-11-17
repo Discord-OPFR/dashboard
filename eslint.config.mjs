@@ -68,6 +68,7 @@ export default defineConfig([
       'no-prototype-builtins': 'off',
       'no-useless-escape': 'off',
 
+
       quotes: [
         'warn',
         'single',

@@ -13,10 +13,15 @@
     "fmt:check": "prettier --check \"src/**/*.{js,jsx,cjx,ts,tsx,json,md}\"",
     "lint:scss": "stylelint \"src/**/*.scss\"",
     "lint:ts": "eslint . --ext=.ts,.tsx",
+    "lint:ts:fix": "eslint . --ext=.ts,.tsx --fix",
     "lint": "npm run lint:ts && npm run lint:scss",
+    "lint:fix": "npm run lint:ts:fix && npm run lint:scss",
     "generate:assets": "npm run generate:icons && npm run generate:translations",
     "generate:translations": "cp node_modules/@opfr/items/locales/items/fr.json public/locales/fr/items.json && cp node_modules/@opfr/items/locales/equipments/fr.json public/locales/fr/equipments.json",
-    "generate:icons": "rm -rf src/components/icons && npx @svgr/cli --memo --no-dimensions --no-prettier --no-index --out-dir src/components/icons -- src/assets/icons && npx eslint src/components/icons --fix"
+    "generate:icons": "rm -rf src/components/icons && npx @svgr/cli --memo --no-dimensions --no-prettier --no-index --out-dir src/components/icons -- src/assets/icons && npx eslint src/components/icons --fix",
+    "api-specs:create": "npm run api-specs:download && npm run api-specs:generate",
+    "api-specs:download": "node scripts/fetchApiSpecs.mjs",
+    "api-specs:generate": "npx openapi-typescript-codegen --exportCore=false --client fetch --input api-specs/openapi.json --output src/api/generated && prettier --write \"src/api/generated\""
   },
   "dependencies": {
     "@gatewatcher/bistoury": "1.12.0",
@@ -27,11 +32,14 @@
     "@opfr/translate": "0.4.3",
     "@opfr/utils-lang": "0.17.3",
     "@opfr/utils-type": "0.18.7",
+    "@reduxjs/toolkit": "2.10.1",
+    "@tanstack/react-query": "5.90.10",
     "i18next": "25.6.1",
     "i18next-fetch-backend": "7.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-i18next": "16.2.4",
+    "react-redux": "9.2.0",
     "react-router-dom": "7.9.5"
   },
   "devDependencies": {
@@ -59,6 +67,7 @@
     "globals": "16.4.0",
     "husky": "8.0.3",
     "lint-staged": "16.2.6",
+    "openapi-typescript-codegen": "0.29.0",
     "prettier": "3.6.2",
     "sass": "1.93.3",
     "stylelint": "16.25.0",

@@ -4,9 +4,16 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FullPageSpinner } from '@/components/full-page-spinner';
 
 import { protectedRoutes } from './protected';
+import { publicRoutes } from './public';
 
-export const AppRouter = () => {
-  const router = createBrowserRouter(protectedRoutes);
+type AppRouterProps = {
+  isAuthenticated: boolean;
+};
+
+export const AppRouter = ({ isAuthenticated }: AppRouterProps) => {
+  const router = createBrowserRouter(
+    isAuthenticated ? protectedRoutes : publicRoutes,
+  );
 
   return (
     <Suspense fallback={<FullPageSpinner />}>
