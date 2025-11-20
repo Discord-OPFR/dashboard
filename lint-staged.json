@@ -1,3 +1,3 @@
 {
-  "src/**/.{tsx,ts,json,css,scss}": ["npm run fmt", "npm run lint"]
+  "src/**/*.{tsx,ts,json,css,scss}": ["npm run fmt", "npm run lint"]
 }
