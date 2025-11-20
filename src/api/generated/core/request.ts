@@ -327,7 +327,6 @@ export const request = <T>(
       const formData = getFormData(options);
       const body = getRequestBody(options);
       const headers = await getHeaders(config, options);
-      console.log(config);
 
       if (!onCancel.isCancelled) {
         const response = await sendRequest(

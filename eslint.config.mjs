@@ -23,6 +23,7 @@ export default defineConfig([
     '**/coverage',
     '**/public',
     '**/*.d.ts',
+    'src/api/generated'
   ]),
   {
     extends: fixupConfigRules(
