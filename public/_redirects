@@ -1,4 +1,1 @@
-# Syntaxe : /source/* target  code
-# Le code 200 est crucial pour faire un "rewrite" (proxy transparent) et non une redirection 301
-
 /api/* https://opfr-back.vercel.app/api/:splat  200

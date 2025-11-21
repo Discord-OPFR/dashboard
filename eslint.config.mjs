@@ -23,7 +23,7 @@ export default defineConfig([
     '**/coverage',
     '**/public',
     '**/*.d.ts',
-    'src/api/generated'
+    'src/api/generated',
   ]),
   {
     extends: fixupConfigRules(
@@ -68,7 +68,6 @@ export default defineConfig([
       'no-case-declarations': 'off',
       'no-prototype-builtins': 'off',
       'no-useless-escape': 'off',
-
 
       quotes: [
         'warn',
