@@ -12,7 +12,7 @@ export const Unauthorized = () => {
   const { t } = useLocales('misc', { keyPrefix: 'pages.unauthorized' });
 
   const handleLogin = () => {
-    window.location.href = `${import.meta.env.VITE_API_URL}/auth/login`;
+    window.location.href = `${import.meta.env.VITE_API_URL}/auth/login?origin=${window.location.origin}`;
   };
 
   return (

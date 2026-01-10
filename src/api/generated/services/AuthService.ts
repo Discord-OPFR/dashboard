@@ -19,26 +19,32 @@ export class AuthService {
     });
   }
   /**
+   * @param origin
    * @returns any
    * @throws ApiError
    */
-  public static login(): CancelablePromise<any> {
+  public static login(origin: string): CancelablePromise<any> {
     return __request(OpenAPI, {
       method: 'GET',
       url: '/auth/login',
+      query: {
+        origin: origin,
+      },
     });
   }
   /**
    * @param code
+   * @param state
    * @returns any
    * @throws ApiError
    */
-  public static callback(code: string): CancelablePromise<any> {
+  public static callback(code: string, state: string): CancelablePromise<any> {
     return __request(OpenAPI, {
       method: 'GET',
       url: '/auth/discord/callback',
       query: {
         code: code,
+        state: state,
       },
     });
   }
