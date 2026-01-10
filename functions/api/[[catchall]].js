@@ -1,35 +1,43 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
-  const targetUrl = url.toString().replace(url.origin, 'https://opfr-back.vercel.app');
+  const targetUrl = `https://opfr-back.vercel.app${url.pathname}${url.search}`;
 
-  const proxyRequest = new Request(targetUrl, {
+  const newHeaders = new Headers(context.request.headers);
+
+  newHeaders.set('X-Forwarded-Host', url.host);
+  newHeaders.set('X-Forwarded-Proto', url.protocol.replace(':', ''));
+
+  newHeaders.set('Host', 'opfr-back.vercel.app');
+
+  const fetchOptions = {
     method: context.request.method,
-    headers: context.request.headers,
-    body: context.request.body,
-    redirect: 'manual'
-  });
+    headers: newHeaders,
+    redirect: 'manual',
+  };
 
-  const response = await fetch(proxyRequest);
+  if (context.request.method !== 'GET' && context.request.method !== 'HEAD') {
+    fetchOptions.body = context.request.body;
+  }
 
-  const newHeaders = new Headers(response.headers);
+  const response = await fetch(targetUrl, fetchOptions);
 
-  newHeaders.delete('content-encoding');
-  newHeaders.delete('content-length');
-  newHeaders.delete('transfer-encoding');
+  const responseHeaders = new Headers(response.headers);
 
-  if (response.status >= 300 && response.status < 400) {
-    const location = newHeaders.get('location');
-    if (location) {
-      return new Response(null, {
-        status: response.status,
-        headers: newHeaders
-      });
-    }
+  responseHeaders.delete('content-encoding');
+  responseHeaders.delete('content-length');
+  responseHeaders.delete('transfer-encoding');
+
+  const location = responseHeaders.get('location');
+  if (location && location.includes('opfr-back.vercel.app')) {
+    responseHeaders.set(
+      'location',
+      location.replace('https://opfr-back.vercel.app', url.origin),
+    );
   }
 
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
-    headers: newHeaders
+    headers: responseHeaders,
   });
 }

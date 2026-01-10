@@ -14,11 +14,12 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['@opfr'],
-  },
-  server: {
-    fs: {
-      allow: ['../../Gatewatcher/skin', '..'],
-    },
+    include: [
+      '@opfr/definitions',
+      '@opfr/emojis',
+      '@opfr/services',
+      '@opfr/utils-lang',
+      '@opfr/utils-type',
+    ],
   },
 });

@@ -15,9 +15,10 @@ import {
   Title,
   usePagination,
 } from '@gatewatcher/skin';
-import { allEntities } from '@opfr/items';
+import type { Entity } from '@opfr/definitions';
+import { getEntityName } from '@opfr/entities';
 
-export const Entity = () => {
+export const EntityRoute = () => {
   const [search, setSearch] = useState('');
   const [pageParams, setParams] = useState<LoadMoreParams>();
   const [columns, setColumns] = useState(5);
@@ -27,7 +28,8 @@ export const Entity = () => {
   };
 
   const filteredEntities = useMemo(
-    () => allEntities.filter(entity => entity.name().includes(search)),
+    () =>
+      ([] as Entity[]).filter(entity => getEntityName(entity).includes(search)),
     [search],
   );
 
@@ -62,12 +64,12 @@ export const Entity = () => {
             withEqualWidthColumns
           >
             {entity => (
-              <List.Item key={entity.id}>
+              <List.Item key={entity.entityId}>
                 <Card>
                   <Card.Header>
                     <Card.Title>
                       <Text whiteSpace="nowrap" overflowHidden>
-                        {entity.name()}
+                        {getEntityName(entity)}
                       </Text>
                     </Card.Title>
                     <Card.ButtonActions

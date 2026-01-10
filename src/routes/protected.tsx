@@ -15,9 +15,9 @@ const { Home } = lazyImport(
   'Home',
 );
 
-const { Entity } = lazyImport(
+const { EntityRoute } = lazyImport(
   () => import('@/features/entity/routes/Entity'),
-  'Entity',
+  'EntityRoute',
 );
 
 const ProtectedApp = () => {
@@ -38,7 +38,7 @@ export const protectedRoutes: RouteObject[] = [
     element: <ProtectedApp />,
     children: [
       { path: PATHS.home, element: <Home /> },
-      { path: PATHS.entity.base, element: <Entity /> },
+      { path: PATHS.entity.base, element: <EntityRoute /> },
     ],
   },
 ];
