@@ -4,7 +4,7 @@ export async function onRequest(context) {
 
   const newHeaders = new Headers(context.request.headers);
 
-  newHeaders.set('X-Forwarded-Host', url.host);
+  newHeaders.set('X-Original-Host', url.host);
   newHeaders.set('X-Forwarded-Proto', url.protocol.replace(':', ''));
 
   newHeaders.set('Host', 'opfr-back.vercel.app');
