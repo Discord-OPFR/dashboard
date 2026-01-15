@@ -21,7 +21,7 @@
     "generate:icons": "rm -rf src/components/icons && npx @svgr/cli --memo --no-dimensions --no-prettier --no-index --out-dir src/components/icons -- src/assets/icons && npx eslint src/components/icons --fix && npx prettier --write src/components/icons/*.tsx",
     "api-specs:create": "npm run api-specs:download && npm run api-specs:generate",
     "api-specs:download": "node scripts/fetchApiSpecs.mjs",
-    "api-specs:generate": "npx openapi-typescript-codegen --exportCore=false --client fetch --input api-specs/openapi.json --output src/api/generated && prettier --write \"src/api/generated\""
+    "api-specs:generate": "npx openapi-ts"
   },
   "dependencies": {
     "@gatewatcher/bistoury": "1.12.0",
@@ -50,6 +50,7 @@
     "@eslint/compat": "1.4.1",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.39.1",
+    "@hey-api/openapi-ts": "0.90.3",
     "@opfr/papaya": "0.0.12",
     "@svgr/cli": "8.1.0",
     "@trivago/prettier-plugin-sort-imports": "6.0.0",
@@ -69,7 +70,6 @@
     "globals": "16.4.0",
     "husky": "8.0.3",
     "lint-staged": "16.2.6",
-    "openapi-typescript-codegen": "0.29.0",
     "prettier": "3.6.2",
     "sass": "1.93.3",
     "stylelint": "16.25.0",

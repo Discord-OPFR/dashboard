@@ -8,15 +8,21 @@ import { AuthenticationProvider } from '@/features/auth/provider/AuthenticationP
 import { reduxStore } from '@/store/reduxStore';
 import { ThemeProvider } from '@gatewatcher/skin';
 
-import { OpenAPI } from './api/generated/core/OpenAPI';
+import { client } from './api/generated/client.gen';
+import { setupAuthErrorInterceptor } from './api/interceptors/authErrorInterceptor';
 import i18n from './lib/i18n';
 import { AppRouter } from './routes/router';
 
 const queryClient = new QueryClient();
 
-OpenAPI.BASE = import.meta.env.VITE_API_URL;
-OpenAPI.CREDENTIALS = 'include';
-OpenAPI.WITH_CREDENTIALS = true;
+client.setConfig({
+  baseUrl: import.meta.env.VITE_API_URL,
+  responseStyle: 'data',
+  throwOnError: true,
+  credentials: 'include',
+});
+
+setupAuthErrorInterceptor();
 
 export const App = () => {
   return (

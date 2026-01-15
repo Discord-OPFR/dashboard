@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 
-import type { User } from '../domain/auth.entity';
+import type { User } from '../domain/auth.models';
 import { actions } from './auth.actions';
 
 export type AuthState = {

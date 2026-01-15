@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { User } from '../domain/auth.entity';
+import type { User } from '../domain/auth.models';
 
 enum Types {
   LOGIN = 'auth/login',

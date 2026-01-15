@@ -1,5 +1,6 @@
 import { actions } from '@/modules/auth/application/auth.actions';
 import type { AppThunk } from '@/store/reduxStore';
+import { authUseCaseErrorHandler } from '@/utils/store';
 
 export const readMe: () => AppThunk =
   () =>
@@ -7,15 +8,9 @@ export const readMe: () => AppThunk =
     try {
       const user = await authProvider.me();
 
-      if (user) {
-        dispatch(actions.login());
-        dispatch(actions.setUser(user));
-      } else {
-        dispatch(actions.logout());
-        throw new Error('No user logged in');
-      }
+      dispatch(actions.login());
+      dispatch(actions.setUser(user));
     } catch (error) {
-      dispatch(actions.logout());
-      throw error;
+      await authUseCaseErrorHandler(dispatch, error, readMe);
     }
   };

@@ -38,17 +38,15 @@ export type AppThunk<R = unknown> = ThunkAction<
   R,
   AppState,
   Dependencies,
-  Action<string>
+  Action
 >;
 
 export type AppDispatch = ThunkDispatch<AppState, Dependencies, UnknownAction>;
 
-export type ReduxStore = Omit<Store<AppState, UnknownAction>, 'dispatch'> & {
+export type ReduxStore = Omit<Store<AppState>, 'dispatch'> & {
   dispatch: AppDispatch;
 };
 
 export const useAppDispatch = () => useReduxDispatch<AppDispatch>();
 
 export const useAppSelector: TypedUseSelectorHook<AppState> = useReduxSelector;
-
-export const store = reduxStore;

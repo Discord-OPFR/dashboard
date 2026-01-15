@@ -24,8 +24,10 @@
       "@/config/*": ["config/*"],
       "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/interceptors/*": ["api/interceptors/*"],
       "@/modules/*": ["modules/*"],
-      "@/store/*": ["store/*"]
+      "@/store/*": ["store/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "include": ["src", ".storybook"],

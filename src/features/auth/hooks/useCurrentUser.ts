@@ -17,6 +17,7 @@ export const useCurrentUser = (options?: {
       return null;
     },
     retry: false,
+    refetchInterval: 1000 * 60,
     staleTime: 5 * 60 * 1000,
     enabled: options?.enabled ?? true,
   });
