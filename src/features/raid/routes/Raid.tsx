@@ -1,7 +1,8 @@
 import { RouteContainer } from '@gatewatcher/skin';
 
-import { RaidTable } from '@/features/raid/components/listings/raid-table/RaidTable';
 import { useLocales } from '@/hooks/useLocales';
+
+import { RaidTable } from '../components/listings/raid-table/RaidTable';
 
 export const RaidRoute = () => {
   const { t } = useLocales('raid', { keyPrefix: 'main.root' });

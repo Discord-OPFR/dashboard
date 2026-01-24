@@ -5,7 +5,7 @@ import type { RaidGateway } from '../application/raid.gateway';
 import type { RaidStructure } from '../domain/raid.models';
 
 export class RaidProvider implements RaidGateway {
-  async list(): Promise<RaidStructure[]> {
+  async readList(): Promise<RaidStructure[]> {
     return Promise.resolve([
       trainingStructure,
       resourcesStructure,
@@ -13,7 +13,7 @@ export class RaidProvider implements RaidGateway {
     ] as RaidStructure[]);
   }
 
-  async detail(id: string): Promise<RaidStructure> {
+  async readDetail(id: string): Promise<RaidStructure> {
     if (id === 'training') {
       return Promise.resolve(trainingStructure as RaidStructure);
     } else if (id === 'mysterious_island') {

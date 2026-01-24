@@ -22,6 +22,7 @@ import {
   getMeasuredDimensions,
   transformRaidToFlow,
 } from '@/features/raid/components/flow/utils';
+import { useFlowSettings } from '@/features/raid/hooks/useFlowSettings';
 import { useLocales } from '@/hooks/useLocales';
 import type { RaidStructure } from '@/modules/raid/domain/raid.models';
 
@@ -41,6 +42,8 @@ export const RaidFlow = ({ raid }: RaidFlowProps) => {
   const nodesInitialized = useNodesInitialized();
   const { fitView, getNodes } = useReactFlow();
 
+  const { data: flow } = useFlowSettings();
+
   const onConnect = useCallback(
     (params: Connection) => {
       const sourceNode = getNodes().find(n => n.id === params.source);
@@ -56,13 +59,17 @@ export const RaidFlow = ({ raid }: RaidFlowProps) => {
         ? getMeasuredDimensions(getNodes())
         : undefined;
 
-      const { nodes, edges } = await transformRaidToFlow(raid, dimensions);
+      const { nodes, edges } = await transformRaidToFlow(
+        raid,
+        flow,
+        dimensions,
+      );
       setNodes(nodes);
       setEdges(edges);
 
       requestAnimationFrame(() => fitView({ padding: 0.2 }));
     },
-    [raid, setEdges, setNodes, getNodes, fitView],
+    [raid, setEdges, setNodes, getNodes, fitView, flow],
   );
 
   useEffect(() => {
@@ -103,11 +110,10 @@ export const RaidFlow = ({ raid }: RaidFlowProps) => {
         <Background
           gap={120}
           id="1"
-          offset={8}
           size={3}
           variant={BackgroundVariant.Dots}
         />
-        <Background gap={12} id="2" size={1} variant={BackgroundVariant.Dots} />
+        <Background gap={24} id="2" size={1} variant={BackgroundVariant.Dots} />
       </ReactFlow>
     </div>
   );

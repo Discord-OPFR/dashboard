@@ -5,6 +5,7 @@ import type {
   RaidNode,
   RaidStructure,
 } from '@/modules/raid/domain/raid.models';
+import type { FlowSettings } from '@/modules/settings/domain/settings.model';
 
 import type {
   RaidConditionCheckNodeType,
@@ -144,6 +145,7 @@ const getNodePorts = (node: FlowNode) => {
 const applyElkLayout = async (
   nodes: FlowNode[],
   edges: Edge[],
+  options: FlowSettings,
   dimensions?: NodeDimensions,
 ): Promise<FlowNode[]> => {
   const graph = {
@@ -156,10 +158,10 @@ const applyElkLayout = async (
       'elk.spacing.edgeNode': '40',
       'elk.layered.spacing.nodeNodeBetweenLayers': '100',
       'elk.layered.spacing.edgeNodeBetweenLayers': '40',
-      'elk.layered.crossingMinimization.strategy': 'LAYER_SWEEP',
-      'elk.layered.nodePlacement.strategy': 'NETWORK_SIMPLEX',
       'elk.portConstraints': 'FIXED_ORDER',
-      'elk.layered.mergeEdges': 'false',
+      'elk.layered.crossingMinimization.strategy':
+        options.crossingMinimizationStrategy,
+      'elk.layered.nodePlacement.strategy': options.nodePlacementStrategy,
     },
     children: nodes.map(node => {
       const { width, height } = dimensions?.[node.id] ?? {
@@ -204,11 +206,12 @@ const applyElkLayout = async (
 
 export const transformRaidToFlow = async (
   raid: RaidStructure,
+  options: FlowSettings,
   dimensions?: NodeDimensions,
 ): Promise<{ nodes: FlowNode[]; edges: Edge[] }> => {
   const nodes = raid.nodes.map(node => createNode(node));
   const edges = raid.nodes.flatMap(node => createEdgesForNode(node));
-  const layoutedNodes = await applyElkLayout(nodes, edges, dimensions);
+  const layoutedNodes = await applyElkLayout(nodes, edges, options, dimensions);
 
   const styledEdges = edges.map(edge => ({
     ...edge,

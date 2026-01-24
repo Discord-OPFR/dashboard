@@ -1,4 +1,31 @@
 .Flow {
+  @keyframes dashedFlow {
+    to {
+      stroke-dashoffset: -60;
+    }
+  }
+
+  $node-types: (
+    'Event': 'magenta',
+    'End': 'turquoise',
+    'UserChoice': 'yellow',
+    'ConditionCheck': 'blue',
+    'ItemRequired': 'pink',
+    'Goto': 'purple',
+  );
+
+  $edge-types: (
+    'Event': 'magenta',
+    'End': 'turquoise',
+    'UserChoice': 'yellow',
+    'ItemRequired': 'pink',
+  );
+
+  $edge-conditions: (
+    'Success': 'green',
+    'Failure': 'red',
+  );
+
   &Container {
     width: 100%;
     height: calc(100vh - 210px);
@@ -51,15 +78,30 @@
   }
 
   &Edge {
-    @mixin edge-variant($color) {
-      stroke: var(--color-#{$color});
-      stroke-width: 2;
+    &Goto {
+      animation: dashedFlow 0.5s linear infinite;
+      stroke: var(--color-purple-200);
+      stroke-dasharray: 10 10;
+      stroke-width: 3;
     }
 
-    $edge-types: (
-      'Success': 'green',
-      'Failure': 'red',
-    );
+    @mixin edge-conditions-variant($color) {
+      stroke: var(--color-#{$color});
+      stroke-width: 3;
+    }
+
+    @mixin edge-variant($color) {
+      animation: dashedFlow 1s linear infinite;
+      stroke: var(--color-#{$color}-200);
+      stroke-dasharray: 10 20;
+      stroke-width: 3;
+    }
+
+    @each $name, $color in $edge-conditions {
+      &#{$name} {
+        @include edge-conditions-variant($color);
+      }
+    }
 
     @each $name, $color in $edge-types {
       &#{$name} {
@@ -85,14 +127,6 @@
         background-color: var(--color-#{$color}) !important;
       }
     }
-
-    $node-types: (
-      'Event': 'grey',
-      'End': 'orange',
-      'UserChoice': 'turquoise',
-      'ConditionCheck': 'yellow',
-      'ItemRequired': 'pink',
-    );
 
     @each $name, $color in $node-types {
       &#{$name} {

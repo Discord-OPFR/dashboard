@@ -7,7 +7,7 @@ export const readRaidList: () => AppThunk =
   () =>
   async (dispatch, _getState, { raidProvider }) => {
     try {
-      const raidStructures = await raidProvider.list();
+      const raidStructures = await raidProvider.readList();
 
       dispatch(actions.readList(raidStructures));
     } catch (error) {

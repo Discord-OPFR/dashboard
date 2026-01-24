@@ -7,10 +7,10 @@ export const readRaidDetail: (id: string) => AppThunk =
   id =>
   async (dispatch, _getState, { raidProvider }) => {
     try {
-      const raid = await raidProvider.detail(id);
+      const raid = await raidProvider.readDetail(id);
 
       dispatch(actions.readDetail(raid));
     } catch (error) {
-      await authUseCaseErrorHandler(dispatch, error, readRaidDetail, [id]);
+      await authUseCaseErrorHandler(dispatch, error, readRaidDetail, id);
     }
   };

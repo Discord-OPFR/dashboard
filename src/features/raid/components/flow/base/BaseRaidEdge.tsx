@@ -11,7 +11,7 @@ export const BaseRaidEdge = ({
   targetY,
   sourcePosition,
   targetPosition,
-  ...props
+  className,
 }: BaseRaidEdgeProps) => {
   const [edgePath] = getSmoothStepPath({
     sourceX,
@@ -22,5 +22,5 @@ export const BaseRaidEdge = ({
     targetPosition,
   });
 
-  return <BaseEdge {...props} path={edgePath} />;
+  return <BaseEdge className={className} path={edgePath} />;
 };

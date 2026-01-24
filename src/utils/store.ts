@@ -13,20 +13,20 @@ export async function authUseCaseErrorHandler(
 export async function authUseCaseErrorHandler<T>(
   dispatch: AppDispatch,
   error: unknown,
-  thunk: (..._: T[]) => AppThunk,
-  args: T[],
+  thunk: (_: T) => AppThunk,
+  args: T,
 ): Promise<void>;
 export async function authUseCaseErrorHandler<T>(
   dispatch: AppDispatch,
   error: unknown,
-  thunk: (..._: T[]) => AppThunk | (() => AppThunk),
-  args?: T[],
+  thunk: (_?: T) => AppThunk,
+  args?: T,
 ) {
   if (isTokenExpiredError(error)) {
     const refreshed = await refreshToken();
 
     if (refreshed) {
-      dispatch(thunk(...(args ?? [])));
+      dispatch(thunk(args));
     } else {
       dispatch(actions.logout());
       throw error;
