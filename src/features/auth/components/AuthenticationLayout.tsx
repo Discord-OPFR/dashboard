@@ -1,9 +1,9 @@
+import { Grid, Stack } from '@gatewatcher/skin';
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
 
 import opfr from '@/assets/opfr.webp';
 import { FullPageSpinner } from '@/components/full-page-spinner';
-import { Grid, Stack } from '@gatewatcher/skin';
 
 import styles from '../styles.module.scss';
 

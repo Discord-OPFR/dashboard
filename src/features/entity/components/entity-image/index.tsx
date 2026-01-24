@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-
 import type { StackProps } from '@gatewatcher/skin';
 import { CircularLoader } from '@gatewatcher/skin';
 import { Stack } from '@gatewatcher/skin';
+import { useEffect, useState } from 'react';
+
 import type { EntityCategory, EntityImageId } from '@opfr/definitions';
 
 import styles from './styles.module.scss';

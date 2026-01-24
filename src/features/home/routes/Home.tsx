@@ -1,5 +1,6 @@
-import { useLocales } from '@/hooks/useLocales';
 import { RouteContainer, Title } from '@gatewatcher/skin';
+
+import { useLocales } from '@/hooks/useLocales';
 
 export const Home = () => {
   const { t } = useLocales('home', { keyPrefix: 'main' });

@@ -1,8 +1,8 @@
+import { CircularLoader, LoaderState } from '@gatewatcher/skin';
 import type { ReactNode } from 'react';
 
 import { authSelectors } from '@/modules/auth/application/auth.selectors';
 import { useAppSelector } from '@/store/reduxStore';
-import { CircularLoader, LoaderState } from '@gatewatcher/skin';
 
 import { useCurrentUser } from '../hooks/useCurrentUser';
 

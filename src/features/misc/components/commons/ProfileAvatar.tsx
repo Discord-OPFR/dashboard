@@ -1,6 +1,7 @@
+import { Stack, Text } from '@gatewatcher/skin';
+
 import { authSelectors } from '@/modules/auth/application/auth.selectors';
 import { useAppSelector } from '@/store/reduxStore';
-import { Stack, Text } from '@gatewatcher/skin';
 
 import styles from './styles.module.scss';
 

@@ -1,0 +1,11 @@
+{
+  "raidTable": {
+    "header": {
+      "id": "ID",
+      "type": "Raid type",
+      "cooldown": "Cooldown",
+      "nodes": "Nodes",
+      "entry": "Entry node event"
+    }
+  }
+}

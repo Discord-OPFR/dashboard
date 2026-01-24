@@ -20,6 +20,7 @@ export const authUseCaseErrorHandler = async (
       throw error;
     }
   } else {
+    console.error(error);
     throw error;
   }
 };

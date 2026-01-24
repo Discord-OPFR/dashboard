@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@gatewatcher/skin';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -5,11 +6,10 @@ import { Provider as ReduxProvider } from 'react-redux';
 
 import { FullPageSpinner } from '@/components/full-page-spinner';
 import { AuthenticationProvider } from '@/features/auth/provider/AuthenticationProvider';
+import { setupAuthErrorInterceptor } from '@/interceptors/authErrorInterceptor';
 import { reduxStore } from '@/store/reduxStore';
-import { ThemeProvider } from '@gatewatcher/skin';
 
 import { client } from './api/generated/client.gen';
-import { setupAuthErrorInterceptor } from './api/interceptors/authErrorInterceptor';
 import i18n from './lib/i18n';
 import { AppRouter } from './routes/router';
 

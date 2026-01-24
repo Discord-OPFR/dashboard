@@ -26,3 +26,6 @@ yalc.lock
 .yalc
 
 .env*
+/raids/
+!/features/raids
+!/modules/raids

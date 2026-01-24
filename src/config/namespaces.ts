@@ -4,4 +4,6 @@ export const LOCALES_NAMESPACES = [
   'home',
   'items',
   'misc',
+  'raid',
+  'raids',
 ] as const;

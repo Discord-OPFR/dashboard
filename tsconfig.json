@@ -26,7 +26,9 @@
       "@/hooks/*": ["hooks/*"],
       "@/interceptors/*": ["api/interceptors/*"],
       "@/modules/*": ["modules/*"],
+      "@/raids/*": ["../raids/*"],
       "@/store/*": ["store/*"],
+      "@/types/*": ["types/*"],
       "@/utils/*": ["utils/*"]
     }
   },

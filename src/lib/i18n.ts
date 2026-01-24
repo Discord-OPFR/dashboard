@@ -15,7 +15,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: ['en', 'fr'],
-    ns: [...LOCALES_NAMESPACES, 'equipments', 'raids', 'items'],
+    ns: LOCALES_NAMESPACES,
     interpolation: {
       escapeValue: false,
     },

@@ -1,13 +1,9 @@
 {
-  "pages": {
-    "notFound": {
-      "title": ""
-    }
-  },
   "sideNav": {
     "title": "OPFR",
     "home": "Home",
-    "entity": "Entity"
+    "entity": "Entity",
+    "raids": "Expeditions"
   },
   "topNav": {
     "title": "Dashboard"

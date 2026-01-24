@@ -4,4 +4,8 @@ export const PATHS = {
   entity: {
     base: '/entity',
   },
+
+  raid: {
+    base: '/raid',
+  },
 };
