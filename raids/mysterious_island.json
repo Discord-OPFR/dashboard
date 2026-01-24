@@ -1,0 +1,520 @@
+{
+  "id": "mysterious_island",
+  "cooldown": 604800000,
+  "type": "classic",
+  "start": {
+    "id": "ev_start",
+    "outputs": [
+      {
+        "id": "uc_explore_ruin",
+        "output": {
+          "id": "ev_walk_ruin",
+          "outputs": [
+            {
+              "id": "uc_try_open_door",
+              "output": {
+                "id": "ev_door_locked",
+                "outputs": [
+                  {
+                    "id": "rq_use_old_key",
+                    "requirements": {
+                      "ancient_key": 1
+                    },
+                    "output": {
+                      "id": "ev_use_old_key",
+                      "rewards": {
+                        "xp": 50000
+                      },
+                      "outputs": [
+                        {
+                          "id": "uc_enter_passage",
+                          "output": {
+                            "id": "ev_walk_passage",
+                            "outputs": [
+                              {
+                                "id": "uc_too_bad",
+                                "output": {
+                                  "id": "ev_find_tomb",
+                                  "outputs": [
+                                    {
+                                      "id": "uc_open_tomb",
+                                      "output": {
+                                        "id": "end_open_tomb",
+                                        "rewards": {
+                                          "berry": 500000000,
+                                          "tissue": 10,
+                                          "essence_moon": 5,
+                                          "xp": 150000
+                                        },
+                                        "penalties": {
+                                          "buffs": [
+                                            {
+                                              "target": "cooldown.work",
+                                              "origin": "mysterious-island-malus/null",
+                                              "multiplier": -0.5,
+                                              "endIn": 12,
+                                              "startIn": null
+                                            },
+                                            {
+                                              "target": "cooldown.casino",
+                                              "origin": "mysterious-island-malus/null",
+                                              "multiplier": -0.5,
+                                              "endIn": 12,
+                                              "startIn": null
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "goto_u_turn",
+                                      "goto": [
+                                        "uc_search_jungle",
+                                        "ev_enter_jungle"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "id": "goto_walk_back",
+                                "goto": ["uc_search_jungle", "ev_enter_jungle"]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "id": "uc_go_take_torch",
+                          "output": {
+                            "id": "ev_find_torch",
+                            "outputs": [
+                              {
+                                "id": "rq_turn_on_torch_ruin",
+                                "requirements": {
+                                  "wood": 1
+                                },
+                                "output": {
+                                  "id": "ev_ancient_dark_passage",
+                                  "outputs": [
+                                    {
+                                      "id": "uc_decipher",
+                                      "output": {
+                                        "id": "c_decipher",
+                                        "requirements": {
+                                          "intelligence": 115,
+                                          "wisdom": 115
+                                        },
+                                        "success": {
+                                          "id": "ev_decipher_success",
+                                          "rewards": {
+                                            "xp": 50000
+                                          },
+                                          "outputs": [
+                                            {
+                                              "id": "uc_follow_indications",
+                                              "output": {
+                                                "id": "end_indications_secret_room",
+                                                "rewards": {
+                                                  "berry": 400000000,
+                                                  "sapphire": 1,
+                                                  "essence_fire": 5
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "id": "goto_walk_back",
+                                              "goto": [
+                                                "uc_search_jungle",
+                                                "ev_enter_jungle"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "failure": {
+                                          "id": "ev_decipher_failure",
+                                          "rewards": {
+                                            "xp": 10000
+                                          },
+                                          "outputs": [
+                                            {
+                                              "id": "uc_continue",
+                                              "output": {
+                                                "id": "c_continue_chance",
+                                                "requirements": {
+                                                  "chance": 120
+                                                },
+                                                "success": {
+                                                  "id": "end_continue_chance_success",
+                                                  "rewards": {
+                                                    "berry": 400000000,
+                                                    "sapphire": 1,
+                                                    "essence_fire": 5
+                                                  }
+                                                },
+                                                "failure": {
+                                                  "id": "ev_continue_chance_failure",
+                                                  "outputs": [
+                                                    {
+                                                      "id": "uc_open_tomb",
+                                                      "output": {
+                                                        "id": "end_open_tomb",
+                                                        "rewards": {
+                                                          "berry": 500000000,
+                                                          "tissue": 10,
+                                                          "xp": 150000,
+                                                          "essence_moon": 5
+                                                        },
+                                                        "penalties": {
+                                                          "buffs": [
+                                                            {
+                                                              "target": "cooldown.work",
+                                                              "origin": "mysterious-island-malus/null",
+                                                              "multiplier": -0.5,
+                                                              "endIn": 12,
+                                                              "startIn": null
+                                                            },
+                                                            {
+                                                              "target": "cooldown.casino",
+                                                              "origin": "mysterious-island-malus/null",
+                                                              "multiplier": -0.5,
+                                                              "endIn": 12,
+                                                              "startIn": null
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "goto_u_turn",
+                                                      "goto": [
+                                                        "uc_search_jungle",
+                                                        "ev_enter_jungle"
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "id": "rq_turn_on_torch_jungle",
+                                "requirements": {
+                                  "wood": 1
+                                },
+                                "output": {
+                                  "id": "end_torch_jungle",
+                                  "rewards": {
+                                    "berry": 150000000,
+                                    "rose": 2,
+                                    "poppy": 2
+                                  }
+                                }
+                              },
+                              {
+                                "id": "goto_explore_without_torch",
+                                "goto": [
+                                  "uc_explore_ruin",
+                                  "ev_walk_ruin",
+                                  "uc_try_open_door",
+                                  "ev_door_locked",
+                                  "rq_use_old_key",
+                                  "ev_use_old_key",
+                                  "uc_enter_passage",
+                                  "ev_walk_passage"
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "uc_force_door",
+                    "output": {
+                      "id": "ev_force_door",
+                      "outputs": [
+                        {
+                          "id": "goto_search_way",
+                          "goto": [
+                            "uc_explore_ruin",
+                            "ev_walk_ruin",
+                            "uc_search_way",
+                            "ev_search_way"
+                          ]
+                        },
+                        {
+                          "id": "goto_u_turn",
+                          "goto": ["uc_search_jungle", "ev_enter_jungle"]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uc_search_way",
+              "output": {
+                "id": "ev_search_way",
+                "outputs": [
+                  {
+                    "id": "uc_ramp",
+                    "output": {
+                      "id": "c_ramp",
+                      "requirements": {
+                        "agility": 120
+                      },
+                      "success": {
+                        "id": "ev_ramp_success",
+                        "rewards": {
+                          "xp": 50000
+                        },
+                        "penalties": {
+                          "hp": 100
+                        },
+                        "outputs": [
+                          {
+                            "id": "uc_explore_gallery_no_torch",
+                            "output": {
+                              "id": "ev_explore_gallery_no_torch",
+                              "outputs": [
+                                {
+                                  "id": "uc_open_chest",
+                                  "output": {
+                                    "id": "end_old_chest",
+                                    "rewards": {
+                                      "berry": 100000000,
+                                      "essence_moon": 3
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "id": "rq_explore_gallery_with_torch",
+                            "requirements": {
+                              "wood": 1
+                            },
+                            "output": {
+                              "id": "ev_explore_gallery_with_torch",
+                              "outputs": [
+                                {
+                                  "id": "uc_continue",
+                                  "output": {
+                                    "id": "end_explore_gallery_with_torch",
+                                    "rewards": {
+                                      "berry": 200000000,
+                                      "bottle_xp_1": 10,
+                                      "bottle_xp_2_casino": 2,
+                                      "bottle_xp_2_work": 2,
+                                      "bottle_xp_2_berry": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "failure": {
+                        "id": "ev_ramp_failure",
+                        "penalties": {
+                          "hp": 200
+                        },
+                        "outputs": [
+                          {
+                            "id": "goto_u_turn",
+                            "goto": ["uc_search_jungle", "ev_enter_jungle"]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "uc_search_jungle",
+        "output": {
+          "id": "ev_enter_jungle",
+          "outputs": [
+            {
+              "id": "uc_explore_hard_way",
+              "output": {
+                "id": "ev_wild_animals",
+                "outputs": [
+                  {
+                    "id": "uc_fight_animals",
+                    "output": {
+                      "id": "c_fight_animals",
+                      "requirements": {
+                        "strength": 115,
+                        "agility": 115
+                      },
+                      "success": {
+                        "id": "ev_fight_animals_success",
+                        "rewards": {
+                          "berry": 10000000,
+                          "xp": 40000
+                        },
+                        "penalties": {
+                          "hp": 100
+                        },
+                        "outputs": [
+                          {
+                            "id": "uc_go_back_ship",
+                            "output": {
+                              "id": "end_go_back_ship"
+                            }
+                          },
+                          {
+                            "id": "uc_continue",
+                            "output": {
+                              "id": "ev_keep_going_find_cave",
+                              "outputs": [
+                                {
+                                  "id": "goto_enter_cave",
+                                  "goto": [
+                                    "uc_search_jungle",
+                                    "ev_enter_jungle",
+                                    "uc_explore_hard_way",
+                                    "ev_wild_animals",
+                                    "uc_dodge_animals",
+                                    "ev_dodge_animals",
+                                    "uc_enter_cave",
+                                    "ev_dark_cave"
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "failure": {
+                        "id": "end_fight_animals_failure",
+                        "rewards": {
+                          "berry": 10000000,
+                          "xp": 20000
+                        },
+                        "penalties": {
+                          "hp": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": "uc_dodge_animals",
+                    "output": {
+                      "id": "ev_dodge_animals",
+                      "outputs": [
+                        {
+                          "id": "uc_enter_cave",
+                          "output": {
+                            "id": "ev_dark_cave",
+                            "outputs": [
+                              {
+                                "id": "rq_cave_torch",
+                                "requirements": {
+                                  "wood": 1
+                                },
+                                "output": {
+                                  "id": "ev_cave_torch_on",
+                                  "outputs": [
+                                    {
+                                      "id": "uc_open_chest",
+                                      "output": {
+                                        "id": "end_cave_open_chest",
+                                        "rewards": {
+                                          "berry": 100000000,
+                                          "xp": 20000,
+                                          "sea_salt": 2
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "id": "uc_blind_walk",
+                                "output": {
+                                  "id": "end_cave_blind_walk",
+                                  "rewards": {
+                                    "berry": 50000000,
+                                    "xp": 10000
+                                  },
+                                  "penalties": {
+                                    "hp": 100
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uc_follow_main_path",
+              "output": {
+                "id": "ev_main_path",
+                "outputs": [
+                  {
+                    "id": "uc_search_medicine_herbs",
+                    "output": {
+                      "id": "c_herbs_wisdom",
+                      "requirements": {
+                        "wisdom": 120
+                      },
+                      "success": {
+                        "id": "end_herbs_wisdom_success",
+                        "rewards": {
+                          "xp": 25000,
+                          "clover": 10,
+                          "poppy": 3,
+                          "ebony_poppy": 5
+                        }
+                      },
+                      "failure": {
+                        "id": "end_herbs_wisdom_failure",
+                        "rewards": {
+                          "xp": 5000,
+                          "clover": 2,
+                          "hemp": 3,
+                          "cereal": 3
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": "uc_take_fruits",
+                    "output": {
+                      "id": "end_find_fruits",
+                      "rewards": {
+                        "fruit": 20,
+                        "xp": 10000
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

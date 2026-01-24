@@ -2,5 +2,102 @@
   &Container {
     width: 100%;
     height: calc(100vh - 210px);
+
+    :global(.react-flow__attribution) {
+      border: var(--border-line-regular) solid var(--border-color-default);
+      background-color: var(--body-background-color);
+
+      a {
+        color: var(--text-color);
+      }
+    }
+
+    :global(.react-flow__controls) {
+      border: var(--border-line-large) solid var(--border-color-default);
+      background-color: var(--body-background-color);
+    }
+
+    :global(.react-flow__controls-button) {
+      border-right: var(--border-line-regular) solid var(--border-color-default) !important;
+      background-color: var(--body-background-color);
+      span > svg {
+        max-width: unset;
+        max-height: unset;
+      }
+    }
+    :global(.react-flow__controls-button:last-child) {
+      border-right: none !important;
+    }
+  }
+
+  &Handle {
+    width: 1rem;
+    height: 1rem;
+
+    &Disabled {
+      width: 0.25rem;
+      height: 0.25rem;
+    }
+
+    &Success {
+      top: 30%;
+      background-color: var(--color-green);
+    }
+
+    &Failure {
+      top: 70%;
+      background-color: var(--color-red);
+    }
+  }
+
+  &Edge {
+    @mixin edge-variant($color) {
+      stroke: var(--color-#{$color});
+      stroke-width: 2;
+    }
+
+    $edge-types: (
+      'Success': 'green',
+      'Failure': 'red',
+    );
+
+    @each $name, $color in $edge-types {
+      &#{$name} {
+        @include edge-variant($color);
+      }
+    }
+  }
+
+  &Node {
+    * {
+      color: white;
+    }
+
+    @mixin node-variant($color) {
+      border-color: var(--color-#{$color}-50) !important;
+
+      & > * {
+        border-color: var(--color-#{$color}-50) !important;
+        background-color: var(--color-#{$color}-200);
+      }
+
+      button:hover {
+        background-color: var(--color-#{$color}) !important;
+      }
+    }
+
+    $node-types: (
+      'Event': 'grey',
+      'End': 'orange',
+      'UserChoice': 'turquoise',
+      'ConditionCheck': 'yellow',
+      'ItemRequired': 'pink',
+    );
+
+    @each $name, $color in $node-types {
+      &#{$name} {
+        @include node-variant($color);
+      }
+    }
   }
 }

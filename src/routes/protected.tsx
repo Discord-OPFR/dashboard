@@ -24,6 +24,11 @@ const { RaidRoute } = lazyImport(
   'RaidRoute',
 );
 
+const { RaidDetailRoute } = lazyImport(
+  () => import('@/features/raid/routes/RaidDetail'),
+  'RaidDetailRoute',
+);
+
 const ProtectedApp = () => {
   return (
     <LayoutV2 sideNav={<SideNav />} topNav={<TopNav />}>
@@ -43,7 +48,13 @@ export const protectedRoutes: RouteObject[] = [
     children: [
       { path: PATHS.home, element: <Home /> },
       { path: PATHS.entity.base, element: <EntityRoute /> },
-      { path: PATHS.raid.base, element: <RaidRoute /> },
+      {
+        path: PATHS.raid.base,
+        children: [
+          { index: true, element: <RaidRoute /> },
+          { path: PATHS.raid.detail, element: <RaidDetailRoute /> },
+        ],
+      },
     ],
   },
 ];

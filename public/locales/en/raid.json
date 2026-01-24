@@ -1,4 +1,9 @@
 {
+  "flow": {
+    "controls": {
+      "refresh": "Refresh layout"
+    }
+  },
   "listings": {
     "raidTable": {
       "header": {
@@ -11,6 +16,11 @@
     }
   },
   "main": {
-    "title": "Expeditions"
+    "root": {
+      "title": "Expeditions"
+    },
+    "id": {
+      "title": "Expedition {{id}}"
+    }
   }
 }

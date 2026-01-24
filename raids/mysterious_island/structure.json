@@ -1,0 +1,609 @@
+{
+  "id": "mysterious_island",
+  "cooldown": 604800000,
+  "type": "classic",
+  "startId": "ev_start",
+  "nodes": [
+    {
+      "id": "ev_start",
+      "type": "Event",
+      "outputs": [
+        "uc_explore_ruin",
+        "uc_search_jungle"
+      ]
+    },
+    {
+      "id": "uc_explore_ruin",
+      "type": "UserChoice",
+      "output": "ev_walk_ruin"
+    },
+    {
+      "id": "ev_walk_ruin",
+      "type": "Event",
+      "outputs": [
+        "uc_try_open_door",
+        "uc_search_way"
+      ]
+    },
+    {
+      "id": "uc_try_open_door",
+      "type": "UserChoice",
+      "output": "ev_door_locked"
+    },
+    {
+      "id": "ev_door_locked",
+      "type": "Event",
+      "outputs": [
+        "rq_use_old_key",
+        "uc_force_door"
+      ]
+    },
+    {
+      "id": "rq_use_old_key",
+      "type": "ItemRequired",
+      "requirements": {
+        "ancient_key": 1
+      },
+      "output": "ev_use_old_key"
+    },
+    {
+      "id": "ev_use_old_key",
+      "type": "Event",
+      "rewards": {
+        "xp": 50000
+      },
+      "outputs": [
+        "uc_enter_passage",
+        "uc_go_take_torch"
+      ]
+    },
+    {
+      "id": "uc_enter_passage",
+      "type": "UserChoice",
+      "output": "ev_walk_passage"
+    },
+    {
+      "id": "ev_walk_passage",
+      "type": "Event",
+      "outputs": [
+        "uc_too_bad",
+        "goto_walk_back"
+      ]
+    },
+    {
+      "id": "uc_too_bad",
+      "type": "UserChoice",
+      "output": "ev_find_tomb"
+    },
+    {
+      "id": "ev_find_tomb",
+      "type": "Event",
+      "outputs": [
+        "uc_open_tomb",
+        "goto_u_turn"
+      ]
+    },
+    {
+      "id": "uc_open_tomb",
+      "type": "UserChoice",
+      "output": "end_open_tomb"
+    },
+    {
+      "id": "end_open_tomb",
+      "type": "End",
+      "rewards": {
+        "berry": 500000000,
+        "tissue": 10,
+        "essence_moon": 5,
+        "xp": 150000
+      },
+      "penalties": {
+        "buffs": [
+          {
+            "target": "cooldown.work",
+            "origin": "mysterious-island-malus/null",
+            "multiplier": -0.5,
+            "endIn": 12,
+            "startIn": null
+          },
+          {
+            "target": "cooldown.casino",
+            "origin": "mysterious-island-malus/null",
+            "multiplier": -0.5,
+            "endIn": 12,
+            "startIn": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "goto_u_turn",
+      "type": "Goto",
+      "goto": "ev_enter_jungle"
+    },
+    {
+      "id": "goto_walk_back",
+      "type": "Goto",
+      "goto": "ev_enter_jungle"
+    },
+    {
+      "id": "uc_go_take_torch",
+      "type": "UserChoice",
+      "output": "ev_find_torch"
+    },
+    {
+      "id": "ev_find_torch",
+      "type": "Event",
+      "outputs": [
+        "rq_turn_on_torch_ruin",
+        "rq_turn_on_torch_jungle",
+        "goto_explore_without_torch"
+      ]
+    },
+    {
+      "id": "rq_turn_on_torch_ruin",
+      "type": "ItemRequired",
+      "requirements": {
+        "wood": 1
+      },
+      "output": "ev_ancient_dark_passage"
+    },
+    {
+      "id": "ev_ancient_dark_passage",
+      "type": "Event",
+      "outputs": [
+        "uc_decipher"
+      ]
+    },
+    {
+      "id": "uc_decipher",
+      "type": "UserChoice",
+      "output": "c_decipher"
+    },
+    {
+      "id": "c_decipher",
+      "type": "ConditionCheck",
+      "requirements": {
+        "intelligence": 115,
+        "wisdom": 115
+      },
+      "success": "ev_decipher_success",
+      "failure": "ev_decipher_failure"
+    },
+    {
+      "id": "ev_decipher_success",
+      "type": "Event",
+      "rewards": {
+        "xp": 50000
+      },
+      "outputs": [
+        "uc_follow_indications",
+        "goto_walk_back"
+      ]
+    },
+    {
+      "id": "uc_follow_indications",
+      "type": "UserChoice",
+      "output": "end_indications_secret_room"
+    },
+    {
+      "id": "end_indications_secret_room",
+      "type": "End",
+      "rewards": {
+        "berry": 400000000,
+        "sapphire": 1,
+        "essence_fire": 5
+      }
+    },
+    {
+      "id": "ev_decipher_failure",
+      "type": "Event",
+      "rewards": {
+        "xp": 10000
+      },
+      "outputs": [
+        "uc_try_luck"
+      ]
+    },
+    {
+      "id": "uc_try_luck",
+      "type": "UserChoice",
+      "output": "c_continue_chance"
+    },
+    {
+      "id": "c_continue_chance",
+      "type": "ConditionCheck",
+      "requirements": {
+        "chance": 120
+      },
+      "success": "end_continue_chance_success",
+      "failure": "ev_continue_chance_failure"
+    },
+    {
+      "id": "end_continue_chance_success",
+      "type": "End",
+      "rewards": {
+        "berry": 400000000,
+        "sapphire": 1,
+        "essence_fire": 5
+      }
+    },
+    {
+      "id": "ev_continue_chance_failure",
+      "type": "Event",
+      "outputs": [
+        "uc_open_tomb",
+        "goto_u_turn"
+      ]
+    },
+    {
+      "id": "rq_turn_on_torch_jungle",
+      "type": "ItemRequired",
+      "requirements": {
+        "wood": 1
+      },
+      "output": "end_torch_jungle"
+    },
+    {
+      "id": "end_torch_jungle",
+      "type": "End",
+      "rewards": {
+        "berry": 150000000,
+        "rose": 2,
+        "poppy": 2
+      }
+    },
+    {
+      "id": "goto_explore_without_torch",
+      "type": "Goto",
+      "goto": "ev_walk_passage"
+    },
+    {
+      "id": "uc_force_door",
+      "type": "UserChoice",
+      "output": "ev_force_door"
+    },
+    {
+      "id": "ev_force_door",
+      "type": "Event",
+      "outputs": [
+        "goto_search_way",
+        "goto_u_turn"
+      ]
+    },
+    {
+      "id": "goto_search_way",
+      "type": "Goto",
+      "goto": "ev_search_way"
+    },
+    {
+      "id": "uc_search_way",
+      "type": "UserChoice",
+      "output": "ev_search_way"
+    },
+    {
+      "id": "ev_search_way",
+      "type": "Event",
+      "outputs": [
+        "uc_ramp"
+      ]
+    },
+    {
+      "id": "uc_ramp",
+      "type": "UserChoice",
+      "output": "c_ramp"
+    },
+    {
+      "id": "c_ramp",
+      "type": "ConditionCheck",
+      "requirements": {
+        "agility": 120
+      },
+      "success": "ev_ramp_success",
+      "failure": "ev_ramp_failure"
+    },
+    {
+      "id": "ev_ramp_success",
+      "type": "Event",
+      "rewards": {
+        "xp": 50000
+      },
+      "penalties": {
+        "hp": 100
+      },
+      "outputs": [
+        "uc_explore_gallery_no_torch",
+        "rq_explore_gallery_with_torch"
+      ]
+    },
+    {
+      "id": "uc_explore_gallery_no_torch",
+      "type": "UserChoice",
+      "output": "ev_explore_gallery_no_torch"
+    },
+    {
+      "id": "ev_explore_gallery_no_torch",
+      "type": "Event",
+      "outputs": [
+        "uc_open_gallery_chest"
+      ]
+    },
+    {
+      "id": "uc_open_gallery_chest",
+      "type": "UserChoice",
+      "output": "end_old_chest"
+    },
+    {
+      "id": "end_old_chest",
+      "type": "End",
+      "rewards": {
+        "berry": 100000000,
+        "essence_moon": 3
+      }
+    },
+    {
+      "id": "rq_explore_gallery_with_torch",
+      "type": "ItemRequired",
+      "requirements": {
+        "wood": 1
+      },
+      "output": "ev_explore_gallery_with_torch"
+    },
+    {
+      "id": "ev_explore_gallery_with_torch",
+      "type": "Event",
+      "outputs": [
+        "uc_continue_gallery"
+      ]
+    },
+    {
+      "id": "uc_continue_gallery",
+      "type": "UserChoice",
+      "output": "end_explore_gallery_with_torch"
+    },
+    {
+      "id": "end_explore_gallery_with_torch",
+      "type": "End",
+      "rewards": {
+        "berry": 200000000,
+        "bottle_xp_1": 10,
+        "bottle_xp_2_casino": 2,
+        "bottle_xp_2_work": 2,
+        "bottle_xp_2_berry": 2
+      }
+    },
+    {
+      "id": "ev_ramp_failure",
+      "type": "Event",
+      "penalties": {
+        "hp": 200
+      },
+      "outputs": [
+        "goto_u_turn"
+      ]
+    },
+    {
+      "id": "uc_search_jungle",
+      "type": "UserChoice",
+      "output": "ev_enter_jungle"
+    },
+    {
+      "id": "ev_enter_jungle",
+      "type": "Event",
+      "outputs": [
+        "uc_explore_hard_way",
+        "uc_follow_main_path"
+      ]
+    },
+    {
+      "id": "uc_explore_hard_way",
+      "type": "UserChoice",
+      "output": "ev_wild_animals"
+    },
+    {
+      "id": "ev_wild_animals",
+      "type": "Event",
+      "outputs": [
+        "uc_fight_animals",
+        "uc_dodge_animals"
+      ]
+    },
+    {
+      "id": "uc_fight_animals",
+      "type": "UserChoice",
+      "output": "c_fight_animals"
+    },
+    {
+      "id": "c_fight_animals",
+      "type": "ConditionCheck",
+      "requirements": {
+        "strength": 115,
+        "agility": 115
+      },
+      "success": "ev_fight_animals_success",
+      "failure": "end_fight_animals_failure"
+    },
+    {
+      "id": "ev_fight_animals_success",
+      "type": "Event",
+      "rewards": {
+        "berry": 10000000,
+        "xp": 40000
+      },
+      "penalties": {
+        "hp": 100
+      },
+      "outputs": [
+        "uc_go_back_ship",
+        "uc_continue_to_cave"
+      ]
+    },
+    {
+      "id": "uc_go_back_ship",
+      "type": "UserChoice",
+      "output": "end_go_back_ship"
+    },
+    {
+      "id": "end_go_back_ship",
+      "type": "End"
+    },
+    {
+      "id": "uc_continue_to_cave",
+      "type": "UserChoice",
+      "output": "ev_keep_going_find_cave"
+    },
+    {
+      "id": "ev_keep_going_find_cave",
+      "type": "Event",
+      "outputs": [
+        "goto_enter_cave"
+      ]
+    },
+    {
+      "id": "goto_enter_cave",
+      "type": "Goto",
+      "goto": "ev_dark_cave"
+    },
+    {
+      "id": "end_fight_animals_failure",
+      "type": "End",
+      "rewards": {
+        "berry": 10000000,
+        "xp": 20000
+      },
+      "penalties": {
+        "hp": 400
+      }
+    },
+    {
+      "id": "uc_dodge_animals",
+      "type": "UserChoice",
+      "output": "ev_dodge_animals"
+    },
+    {
+      "id": "ev_dodge_animals",
+      "type": "Event",
+      "outputs": [
+        "uc_enter_cave"
+      ]
+    },
+    {
+      "id": "uc_enter_cave",
+      "type": "UserChoice",
+      "output": "ev_dark_cave"
+    },
+    {
+      "id": "ev_dark_cave",
+      "type": "Event",
+      "outputs": [
+        "rq_cave_torch",
+        "uc_blind_walk"
+      ]
+    },
+    {
+      "id": "rq_cave_torch",
+      "type": "ItemRequired",
+      "requirements": {
+        "wood": 1
+      },
+      "output": "ev_cave_torch_on"
+    },
+    {
+      "id": "ev_cave_torch_on",
+      "type": "Event",
+      "outputs": [
+        "uc_open_cave_chest"
+      ]
+    },
+    {
+      "id": "uc_open_cave_chest",
+      "type": "UserChoice",
+      "output": "end_cave_open_chest"
+    },
+    {
+      "id": "end_cave_open_chest",
+      "type": "End",
+      "rewards": {
+        "berry": 100000000,
+        "xp": 20000,
+        "sea_salt": 2
+      }
+    },
+    {
+      "id": "uc_blind_walk",
+      "type": "UserChoice",
+      "output": "end_cave_blind_walk"
+    },
+    {
+      "id": "end_cave_blind_walk",
+      "type": "End",
+      "rewards": {
+        "berry": 50000000,
+        "xp": 10000
+      },
+      "penalties": {
+        "hp": 100
+      }
+    },
+    {
+      "id": "uc_follow_main_path",
+      "type": "UserChoice",
+      "output": "ev_main_path"
+    },
+    {
+      "id": "ev_main_path",
+      "type": "Event",
+      "outputs": [
+        "uc_search_medicine_herbs",
+        "uc_take_fruits"
+      ]
+    },
+    {
+      "id": "uc_search_medicine_herbs",
+      "type": "UserChoice",
+      "output": "c_herbs_wisdom"
+    },
+    {
+      "id": "c_herbs_wisdom",
+      "type": "ConditionCheck",
+      "requirements": {
+        "wisdom": 120
+      },
+      "success": "end_herbs_wisdom_success",
+      "failure": "end_herbs_wisdom_failure"
+    },
+    {
+      "id": "end_herbs_wisdom_success",
+      "type": "End",
+      "rewards": {
+        "xp": 25000,
+        "clover": 10,
+        "poppy": 3,
+        "ebony_poppy": 5
+      }
+    },
+    {
+      "id": "end_herbs_wisdom_failure",
+      "type": "End",
+      "rewards": {
+        "xp": 5000,
+        "clover": 2,
+        "hemp": 3,
+        "cereal": 3
+      }
+    },
+    {
+      "id": "uc_take_fruits",
+      "type": "UserChoice",
+      "output": "end_find_fruits"
+    },
+    {
+      "id": "end_find_fruits",
+      "type": "End",
+      "rewards": {
+        "fruit": 20,
+        "xp": 10000
+      }
+    }
+  ]
+}

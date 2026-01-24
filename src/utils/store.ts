@@ -5,16 +5,28 @@ import {
 import { actions } from '@/modules/auth/application/auth.actions';
 import type { AppDispatch, AppThunk } from '@/store/reduxStore';
 
-export const authUseCaseErrorHandler = async (
+export async function authUseCaseErrorHandler(
   dispatch: AppDispatch,
   error: unknown,
   thunk: () => AppThunk,
-) => {
+): Promise<void>;
+export async function authUseCaseErrorHandler<T>(
+  dispatch: AppDispatch,
+  error: unknown,
+  thunk: (..._: T[]) => AppThunk,
+  args: T[],
+): Promise<void>;
+export async function authUseCaseErrorHandler<T>(
+  dispatch: AppDispatch,
+  error: unknown,
+  thunk: (..._: T[]) => AppThunk | (() => AppThunk),
+  args?: T[],
+) {
   if (isTokenExpiredError(error)) {
     const refreshed = await refreshToken();
 
     if (refreshed) {
-      dispatch(thunk());
+      dispatch(thunk(...(args ?? [])));
     } else {
       dispatch(actions.logout());
       throw error;
@@ -23,4 +35,4 @@ export const authUseCaseErrorHandler = async (
     console.error(error);
     throw error;
   }
-};
+}

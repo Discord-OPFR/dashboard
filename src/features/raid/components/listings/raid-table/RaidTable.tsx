@@ -1,16 +1,19 @@
 import { formatMilliseconds } from '@gatewatcher/bistoury/utils-date';
 import { Table } from '@gatewatcher/skin';
+import { useNavigate } from 'react-router-dom';
 
 import { RaidTypeChip } from '@/features/raid/components/chips/RaidTypeChip';
 import { useRaidList } from '@/features/raid/hooks/useRaidList';
 import { useLocales } from '@/hooks/useLocales';
+import type { RaidStructure } from '@/modules/raid/domain/raid.models';
 
 export const RaidTable = () => {
   const { data } = useRaidList();
   const { t } = useLocales('raid', { keyPrefix: 'listings.raidTable' });
+  const navigate = useNavigate();
 
-  const handleRowClick = () => {
-    console.log('click');
+  const handleRowClick = (row: RaidStructure) => {
+    navigate(`/raid/${row.id}`);
   };
 
   return (

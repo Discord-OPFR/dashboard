@@ -24,6 +24,12 @@
           "use"
         ]
       }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "local"]
+      }
     ]
   }
 }

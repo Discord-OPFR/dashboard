@@ -7,7 +7,11 @@ export const LOCALES_PREFIXES = [
   'pages',
   'pages.notFound',
   'pages.unauthorized',
+  'flow',
+  'flow.controls',
   'listings',
   'listings.raidTable',
   'listings.raidTable.header',
+  'main.root',
+  'main.id',
 ] as const;

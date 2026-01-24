@@ -83,6 +83,7 @@ export type RaidEnd = {
 
 export type RaidConditionCheck = {
   id: RaidNodeId['ConditionCheck'];
+  type: RaidNodeType & 'ConditionCheck';
   requirements: RaidRequirements;
   success: RaidEvent['id'] | RaidEnd['id'];
   failure: RaidEvent['id'] | RaidEnd['id'];

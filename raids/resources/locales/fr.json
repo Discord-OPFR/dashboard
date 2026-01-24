@@ -1,0 +1,176 @@
+{
+  "name": "L'île verdoyante",
+  "description": "De cette île se dégage un sentiment de sérénité profond. La nature y a repris ses droits, c'est l'endroit parfait pour récolter, avec respect, un packet de ressources",
+  "ev_start": {
+    "title": "C'est si calme, si apaisant",
+    "text": "Vous arrivez sur une île verdoyante remplie de ressources naturelles. Le soleil brille haut dans le ciel, et vous pouvez entendre les charmants chants des oiseaux et le doux murmure des ruisseaux."
+  },
+  "uc_explore_forest": {
+    "label": "Explorer la forêt"
+  },
+  "ev_enter_forest": {
+    "title": "Une forêt riche",
+    "text": "Vous entrez dans une forêt dense et pleine de vie. Vous remarquez une mine au fond de celle-ci."
+  },
+  "uc_search_wood": {
+    "label": "Chercher du bois"
+  },
+  "ev_search_wood": {
+    "title": "\"Heigh-ho ! Heigh-ho ! On rentre du boulot !\"",
+    "text": "Vous vous dirigez vers plusieurs arbres robustes parfaits pour récolter du bois."
+  },
+  "rq_wood": {
+    "label": "Utiliser votre hache (nécessite: {{requirements}})"
+  },
+  "end_wood_big": {
+    "title": "Une hache bien aiguisée",
+    "text": "Vous récoltez une grande quantité de bois.{{rewards}}"
+  },
+  "uc_wood": {
+    "label": "Chercher des branches tombées"
+  },
+  "end_wood_small": {
+    "title": "Un outil aurait été plus pratique",
+    "text": "Vous trouvez quelques branches utilisables.{{rewards}}"
+  },
+  "uc_search_iron": {
+    "label": "Minerai de fer"
+  },
+  "ev_goto_mine": {
+    "title": "Cette mine n'est pas du tout effrayante",
+    "text": "Vous avancez vers la petite mine abandonnée."
+  },
+  "rq_iron": {
+    "label": "Entrer dans la mine (nécessite: {{requirements}})"
+  },
+  "end_iron_big": {
+    "title": "Ferrite = Fer + ?",
+    "text": "Vous trouvez plusieurs morceaux de minerai de fer.{{rewards}}"
+  },
+  "uc_iron": {
+    "label": "Chercher des veines de fer en surface"
+  },
+  "end_iron_small": {
+    "title": "Seuls les nains vont dans les mines",
+    "text": "Vous trouvez quelques morceaux de minerai de fer près de l'entrée de la mine.{{rewards}}"
+  },
+  "uc_explore_beach": {
+    "label": "Descendre vers la plage"
+  },
+  "ev_enter_beach": {
+    "title": "Une plage apaisante",
+    "text": "La plage est vaste et tranquille, bordée de hautes herbes et de dunes de sable."
+  },
+  "uc_goto_herbs": {
+    "label": "Se diriger vers les hautes herbes"
+  },
+  "ev_hemp": {
+    "title": "Du chanvre !",
+    "text": "Vous remarquez des plants de chanvre poussant parmi les herbes hautes"
+  },
+  "rq_hemp": {
+    "label": "Récolter le chanvre avec votre serpe (nécessite: {{requirements}})"
+  },
+  "end_hemp_big": {
+    "title": "\"C'est une bonne situation ça scribe ?\"",
+    "text": "Avec des outils appropriés, vous récoltez une grande quantité de chanvre.{{rewards}}"
+  },
+  "uc_hemp": {
+    "label": "Récolter le chanvre à la main"
+  },
+  "end_hemp_small": {
+    "title": "La serpe ne fait pas le moine",
+    "text": "Vous récoltez une quantité modérée de chanvre.{{rewards}}"
+  },
+  "uc_search_salt_water": {
+    "label": "Chercher de l'eau salée"
+  },
+  "ev_salt_water": {
+    "title": "C'est mélodieux l'eau qui coule",
+    "text": "Vous vous approchez de la mer pour y récolter un peu d'eau salée."
+  },
+  "rq_bowl": {
+    "label": "Utiliser un seau pour recueillir l'eau (nécessite: {{requirements}})"
+  },
+  "end_salt_water_big": {
+    "title": "\"J'adore l'eau, dans 20/30 ans, y'en aura plus\"",
+    "text": "Vous remplissez plusieurs seaux d'eau salée"
+  },
+  "uc_bowl": {
+    "label": "Utiliser des grandes feuilles par terre"
+  },
+  "end_salt_water_small": {
+    "title": "Peu d'eau de mer",
+    "text": "Vous récoltez tant bien que mal une petite quantité d'eau de mer.{{rewards}}"
+  },
+  "uc_goto_plains": {
+    "label": "Partir vers les plaines"
+  },
+  "ev_enter_plains": {
+    "title": "Une vue à couper le souffle",
+    "text": "Vous marchez vers les vastes plaines verdoyantes de l'île, vous y apercevez des champs sauvages ainsi que plusieurs arbres fruitiers"
+  },
+  "uc_search_cereal": {
+    "label": "Chercher des céréales"
+  },
+  "ev_search_cereal": {
+    "title": "Un champ de blé",
+    "text": "Vous trouvez un champ naturel de blé."
+  },
+  "rq_cereal": {
+    "label": "Utiliser une faucille (nécessite: {{requirements}})"
+  },
+  "end_cereal_big": {
+    "title": "Est-ce une faux ou une faucille ?",
+    "text": "Avec une faucille, vous récoltez une grande quantité de blé.{{rewards}}"
+  },
+  "uc_cereal": {
+    "label": "Récolter le blé à la main"
+  },
+  "end_cereal_small": {
+    "title": "Moi ? Peur du tranchant ? Naaan",
+    "text": "Vous récoltez une quantité modérée de blé.{{rewards}}"
+  },
+  "uc_search_cotton": {
+    "label": "Chercher du coton"
+  },
+  "ev_search_cotton": {
+    "title": "Un tapis de neige",
+    "text": "Vous remarquez des plants de coton poussant non loin de là"
+  },
+  "rq_cotton": {
+    "label": "Utiliser une serpe (nécessite: {{requirements}})"
+  },
+  "end_cotton_big": {
+    "title": "\"Vous connaissez Panoramisme ? C'est un droïde.\"",
+    "text": "Avec des outils appropriés, vous récoltez une grande quantité de coton.{{rewards}}"
+  },
+  "uc_cotton": {
+    "label": "Récolter le coton à la main"
+  },
+  "end_cotton_small": {
+    "title": "À la main c'est moins efficace, mais ça fait de l'exercice",
+    "text": "Vous récoltez une quantité modérée de coton.{{rewards}}"
+  },
+  "uc_search_fruit": {
+    "label": "Chercher des fruits"
+  },
+  "ev_fruit": {
+    "title": "De beaux arbres fruitiers",
+    "text": "Vous vous dirigez vers plusieurs arbres dont les fruits vous paraissent appétissants."
+  },
+  "rq_fruit": {
+    "label": "Utiliser votre épuisette (nécessite: {{requirements}})"
+  },
+  "end_fruit_big": {
+    "title": "Cinq fruits et légumes par jour !",
+    "text": "Avec des outils appropriés, vous récoltez une grande quantité de fruits.{{rewards}}"
+  },
+  "uc_fruit": {
+    "label": "Récolter les fruits à la main"
+  },
+  "end_fruit_small": {
+    "title": "De bons fruits pour le dessert",
+    "text": "Vous récoltez une quantité modérée de fruits.{{rewards}}"
+  }
+}

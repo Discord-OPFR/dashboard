@@ -7,5 +7,6 @@ export const PATHS = {
 
   raid: {
     base: '/raid',
+    detail: ':id',
   },
 };

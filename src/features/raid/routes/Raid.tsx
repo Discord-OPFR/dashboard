@@ -4,7 +4,7 @@ import { RaidTable } from '@/features/raid/components/listings/raid-table/RaidTa
 import { useLocales } from '@/hooks/useLocales';
 
 export const RaidRoute = () => {
-  const { t } = useLocales('raids', { keyPrefix: 'main' });
+  const { t } = useLocales('raid', { keyPrefix: 'main.root' });
 
   return (
     <RouteContainer>
