@@ -1,8 +1,3 @@
-import { useMemo, useState } from 'react';
-
-import { CreateEntityButton } from '@/features/entity/components/buttons/CreateEntityButton';
-import { EntityImage } from '@/features/entity/components/entity-image';
-import { useLocales } from '@/hooks/useLocales';
 import type { LoadMoreParams } from '@gatewatcher/skin';
 import {
   Card,
@@ -15,6 +10,11 @@ import {
   Title,
   usePagination,
 } from '@gatewatcher/skin';
+import { useMemo, useState } from 'react';
+
+import { CreateEntityButton } from '@/features/entity/components/buttons/CreateEntityButton';
+import { EntityImage } from '@/features/entity/components/entity-image';
+import { useLocales } from '@/hooks/useLocales';
 import type { Entity } from '@opfr/definitions';
 import { getEntityName } from '@opfr/entities';
 

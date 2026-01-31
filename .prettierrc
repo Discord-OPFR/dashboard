@@ -17,8 +17,8 @@
   "trailingComma": "all",
   "useTabs": false,
   "importOrder": [
-    "(^[a-zA-Z0-9])|^@(?!(opfr|gatewatcher|/))",
-    "^@(opfr|gatewatcher|/)(.*)$",
+    "(^[a-zA-Z0-9])|^@(?!(opfr|/))",
+    "^@(opfr|/)(.*)$",
     "^(?!.*.scss$).*$",
     "[./]"
   ],

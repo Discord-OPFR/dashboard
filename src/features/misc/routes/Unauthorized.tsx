@@ -1,4 +1,3 @@
-import { useLocales } from '@/hooks/useLocales';
 import {
   Button,
   Placeholder,
@@ -7,6 +6,8 @@ import {
   Text,
   Title,
 } from '@gatewatcher/skin';
+
+import { useLocales } from '@/hooks/useLocales';
 
 export const Unauthorized = () => {
   const { t } = useLocales('misc', { keyPrefix: 'pages.unauthorized' });

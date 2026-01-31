@@ -1,0 +1,26 @@
+{
+  "flow": {
+    "controls": {
+      "refresh": "Refresh layout"
+    }
+  },
+  "listings": {
+    "raidTable": {
+      "header": {
+        "id": "ID",
+        "type": "Raid type",
+        "cooldown": "Cooldown",
+        "nodes": "Nodes",
+        "entry": "Entry node event"
+      }
+    }
+  },
+  "main": {
+    "root": {
+      "title": "Expeditions"
+    },
+    "id": {
+      "title": "Expedition {{id}}"
+    }
+  }
+}

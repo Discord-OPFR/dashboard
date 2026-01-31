@@ -1,7 +1,8 @@
+import { SideNav as SkinSideNav } from '@gatewatcher/skin';
+
 import { PATHS } from '@/config/paths';
 import { SideNavHeader } from '@/features/misc/components/navigation/SideNavHeader';
 import { useLocales } from '@/hooks/useLocales';
-import { SideNav as SkinSideNav } from '@gatewatcher/skin';
 
 export const SideNav = () => {
   const { t } = useLocales('misc', { keyPrefix: 'common.sideNav' });
@@ -20,6 +21,9 @@ export const SideNav = () => {
       </SkinSideNav.Link>
       <SkinSideNav.Link icon="Box" to={PATHS.entity.base}>
         {t('entity')}
+      </SkinSideNav.Link>
+      <SkinSideNav.Link icon="3DCurve" to={PATHS.raid.base}>
+        {t('raids')}
       </SkinSideNav.Link>
     </SkinSideNav>
   );

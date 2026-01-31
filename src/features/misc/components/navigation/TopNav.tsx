@@ -1,6 +1,7 @@
+import { NavBar, Stack, ThemeSwitch, Title } from '@gatewatcher/skin';
+
 import { ProfileAvatar } from '@/features/misc/components/commons/ProfileAvatar';
 import { useLocales } from '@/hooks/useLocales';
-import { NavBar, Stack, ThemeSwitch, Title } from '@gatewatcher/skin';
 
 import { LanguageSelector } from '../commons/LanguageSelector';
 

@@ -1,3 +1,4 @@
+import { LayoutV2 } from '@gatewatcher/skin';
 import { Suspense } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
@@ -6,9 +7,7 @@ import { FullPageSpinner } from '@/components/full-page-spinner';
 import { PATHS } from '@/config/paths';
 import { SideNav } from '@/features/misc/components/navigation/SideNav';
 import { TopNav } from '@/features/misc/components/navigation/TopNav';
-import { LayoutV2 } from '@gatewatcher/skin';
-
-import { lazyImport } from '../utils/lazyImport';
+import { lazyImport } from '@/utils/lazyImport';
 
 const { Home } = lazyImport(
   () => import('@/features/home/routes/Home'),
@@ -18,6 +17,16 @@ const { Home } = lazyImport(
 const { EntityRoute } = lazyImport(
   () => import('@/features/entity/routes/Entity'),
   'EntityRoute',
+);
+
+const { RaidRoute } = lazyImport(
+  () => import('@/features/raid/routes/Raid'),
+  'RaidRoute',
+);
+
+const { RaidDetailRoute } = lazyImport(
+  () => import('@/features/raid/routes/RaidDetail'),
+  'RaidDetailRoute',
 );
 
 const ProtectedApp = () => {
@@ -39,6 +48,13 @@ export const protectedRoutes: RouteObject[] = [
     children: [
       { path: PATHS.home, element: <Home /> },
       { path: PATHS.entity.base, element: <EntityRoute /> },
+      {
+        path: PATHS.raid.base,
+        children: [
+          { index: true, element: <RaidRoute /> },
+          { path: PATHS.raid.detail, element: <RaidDetailRoute /> },
+        ],
+      },
     ],
   },
 ];

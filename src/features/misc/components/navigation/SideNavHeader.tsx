@@ -1,6 +1,7 @@
-import Opfr from '@/components/icons/Opfr';
 import { classNames } from '@gatewatcher/bistoury/utils-dom';
 import { Stack, Title } from '@gatewatcher/skin';
+
+import Opfr from '@/components/icons/Opfr';
 
 import styles from './styles.module.scss';
 

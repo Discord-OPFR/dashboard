@@ -1,17 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { actions } from '@/modules/auth/application/auth.actions';
 import { authSelectors } from '@/modules/auth/application/auth.selectors';
 import { readMe } from '@/modules/auth/application/use-cases/readMe';
 import { useAppDispatch, useAppSelector } from '@/store/reduxStore';
+import type { QueryParams } from '@/types/queries';
 
-export const useCurrentUser = (options?: {
-  suspense?: boolean;
-  enabled?: boolean;
-}) => {
+export const useCurrentUser = (options?: QueryParams) => {
   const dispatch = useAppDispatch();
 
   const query = useQuery({
-    queryKey: [],
+    queryKey: [actions.setUser.type],
     queryFn: async () => {
       await dispatch(readMe());
       return null;

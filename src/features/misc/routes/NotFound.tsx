@@ -1,4 +1,3 @@
-import { useLocales } from '@/hooks/useLocales';
 import {
   Placeholder,
   RouteContainer,
@@ -6,6 +5,8 @@ import {
   Text,
   Title,
 } from '@gatewatcher/skin';
+
+import { useLocales } from '@/hooks/useLocales';
 
 export const NotFound = () => {
   const { t } = useLocales('misc', { keyPrefix: 'pages.notFound' });

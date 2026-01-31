@@ -1,0 +1,137 @@
+{
+  "id": "training",
+  "cooldown": 604800000,
+  "type": "classic",
+  "startId": "ev_start",
+  "nodes": [
+    {
+      "id": "ev_start",
+      "type": "Event",
+      "outputs": ["uc_follow_marin"]
+    },
+    {
+      "id": "uc_follow_marin",
+      "type": "UserChoice",
+      "output": "ev_dense_jungle"
+    },
+    {
+      "id": "ev_dense_jungle",
+      "type": "Event",
+      "outputs": ["uc_cross_river", "uc_rock_path"]
+    },
+    {
+      "id": "uc_cross_river",
+      "type": "UserChoice",
+      "output": "c_agility50"
+    },
+    {
+      "id": "c_agility50",
+      "type": "ConditionCheck",
+      "requirements": {
+        "agility": 50
+      },
+      "success": "ev_agility50_success",
+      "failure": "ev_agility50_failure"
+    },
+    {
+      "id": "ev_agility50_success",
+      "type": "Event",
+      "rewards": {
+        "xp": 75000
+      },
+      "outputs": ["uc_continue_forest"]
+    },
+    {
+      "id": "ev_agility50_failure",
+      "type": "Event",
+      "rewards": {
+        "xp": 50000
+      },
+      "outputs": ["uc_continue_forest"]
+    },
+    {
+      "id": "uc_continue_forest",
+      "type": "UserChoice",
+      "output": "ev_begin_forest"
+    },
+    {
+      "id": "ev_begin_forest",
+      "type": "Event",
+      "outputs": ["uc_take_fruit", "uc_collect_plants"]
+    },
+    {
+      "id": "uc_take_fruit",
+      "type": "UserChoice",
+      "output": "end_fruits"
+    },
+    {
+      "id": "end_fruits",
+      "type": "End",
+      "rewards": {
+        "fruit": 4
+      }
+    },
+    {
+      "id": "uc_collect_plants",
+      "type": "UserChoice",
+      "output": "end_plants"
+    },
+    {
+      "id": "end_plants",
+      "type": "End",
+      "rewards": {
+        "clover": 3,
+        "hemp": 4
+      }
+    },
+    {
+      "id": "uc_rock_path",
+      "type": "UserChoice",
+      "output": "ev_hard_path"
+    },
+    {
+      "id": "ev_hard_path",
+      "type": "Event",
+      "rewards": {
+        "xp": 50000
+      },
+      "outputs": ["uc_continue_swamp"]
+    },
+    {
+      "id": "uc_continue_swamp",
+      "type": "UserChoice",
+      "output": "ev_swamp"
+    },
+    {
+      "id": "ev_swamp",
+      "type": "Event",
+      "outputs": ["uc_rummage_captain_suite", "uc_look_ship_hold"]
+    },
+    {
+      "id": "uc_rummage_captain_suite",
+      "type": "UserChoice",
+      "output": "end_captain_suite"
+    },
+    {
+      "id": "end_captain_suite",
+      "type": "End",
+      "rewards": {
+        "berry": 50000000,
+        "strange_gem": 1
+      }
+    },
+    {
+      "id": "uc_look_ship_hold",
+      "type": "UserChoice",
+      "output": "end_ship_hold"
+    },
+    {
+      "id": "end_ship_hold",
+      "type": "End",
+      "rewards": {
+        "fruit": 2,
+        "wood_plank": 4
+      }
+    }
+  ]
+}

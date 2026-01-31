@@ -1,0 +1,75 @@
+{
+  "name": "Expédition d'entraînement",
+  "description": "C'est dangeureux là dehors... Avant de commencer les choses sérieuses, un petit entraînement s'impose.",
+  "ev_start": {
+    "title": "Début de l'entraînement !",
+    "text": "Sur la plage ensoleillée d'une île, un vieux marin vous fait signe. Son visage est marqué par des années de navigation, et ses yeux pétillent de malice.\n\n**Vieux Marin** : \"Ahoy, jeune aventurier ! Si tu veux survivre et prospérer sur ces eaux, tu dois apprendre l'art de l'expédition. Suis-moi, je vais te montrer comment on fait.\""
+  },
+  "uc_follow_marin": {
+    "label": "Suivre le vieux marin dans la jungle luxuriante"
+  },
+  "ev_dense_jungle": {
+    "title": "Une jungle peu attrayante",
+    "text": "La jungle dense est remplie de sons et de mouvements mystérieux. Le vieux marin avance avec assurance, écartant les lianes et évitant les racines.\n\n**Vieux Marin** : \"Les dangers sont nombreux ici. Il faut savoir où mettre les pieds.\""
+  },
+  "uc_cross_river": {
+    "label": "Traverser la rivière"
+  },
+  "ev_agility50_success": {
+    "title": "Quelle agilité !",
+    "text": "Vous traversez avec aisance, sautant de pierre en pierre, impressionnant le vieux marin.\n\n**Vieux Marin** : \"Bien joué ! L'agilité est cruciale dans certaines situations.\"{{rewards}}"
+  },
+  "ev_agility50_failure": {
+    "title": "Un manque certain d'agilité...",
+    "text": "Votre manque d'équilibre vous fait tomber dans l'eau.\n\n**Vieux Marin** : \"Tiens-toi bien et fais attention où tu mets les pieds. Si tu n'es pas assez agile, tu pourrais te blesser\"{{rewards}}"
+  },
+  "uc_continue_forest": {
+    "label": "Continuer"
+  },
+  "uc_continue_swamp": {
+    "label": "Continuer"
+  },
+  "ev_begin_forest": {
+    "title": "La grâce de la forêt",
+    "text": "Vous arrivez à l'orée d'une forêt, vous apercevez des fruits et des plantes peu communes"
+  },
+  "uc_take_fruit": {
+    "label": "Ramasser les fruits"
+  },
+  "uc_collect_plants": {
+    "label": "Cueillir des plantes"
+  },
+  "end_fruits": {
+    "title": "De bons fruits de saison",
+    "text": "Vous trouvez des baies comestibles.\n\n**Vieux Marin** : \"Encombrant mais bon, on va faire avec !\"{{rewards}}"
+  },
+  "end_plants": {
+    "title": "La main verte",
+    "text": "Vous ramassez quelques plantes.\n\n**Vieux Marin** : \"Attention lorsque tu ramasses ce genre de chose ! Il faut bien savoir à quoi tu as affaire sinon tu les récolteras n'importe comment et ça ne sera pas utilisable.\"{{rewards}}"
+  },
+  "uc_rock_path": {
+    "label": "Contourner par le sentier rocailleux"
+  },
+  "ev_hard_path": {
+    "title": "Un chemin peu praticable",
+    "text": "Le sentier est ardu mais plus sûr.\n\n**Vieux Marin** : \"Parfois, il vaut mieux prendre le chemin différent mais plus sûr.\"{{rewards}}"
+  },
+  "ev_swamp": {
+    "title": "Beurk ça pue ici !",
+    "text": "Vous arrivez dans un marécage, vous apercevez un bateau à moitié enfoui dans la vase, il est en train de s'enfoncer.\n\n**Vieux Marin** : Il ne nous reste plus beaucoup de temps avant qu'il disparaisse, il faut faire un choix !"
+  },
+  "uc_rummage_captain_suite": {
+    "label": "Fouiller la cabine du capitaine"
+  },
+  "uc_look_ship_hold": {
+    "label": "Examiner la cale"
+  },
+  "end_captain_suite": {
+    "title": "Une cabine remplie de trésors !",
+    "text": "Vous trouvez une gemme étrange et quelques objets précieux.\n\n**Vieux Marin** : \"Ah, voilà quelque chose qui pourrait être utile plus tard !\"{{rewards}}"
+  },
+  "end_ship_hold": {
+    "title": "Une cale remplie de trésors !",
+    "text": "Vous trouvez des provisions et des matériaux utiles pour le camp.\n\n**Vieux Marin** : \"Des provisions et des matériaux. Parfait pour une longue expédition.\"{{rewards}}"
+  }
+}

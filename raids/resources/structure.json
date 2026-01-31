@@ -1,0 +1,302 @@
+{
+  "id": "resources",
+  "cooldown": 604800000,
+  "type": "special",
+  "startId": "ev_start",
+  "nodes": [
+    {
+      "id": "ev_start",
+      "type": "Event",
+      "outputs": ["uc_explore_forest", "uc_explore_beach", "uc_goto_plains"]
+    },
+    {
+      "id": "uc_explore_forest",
+      "type": "UserChoice",
+      "output": "ev_enter_forest"
+    },
+    {
+      "id": "ev_enter_forest",
+      "type": "Event",
+      "outputs": ["uc_search_wood", "uc_search_iron"]
+    },
+    {
+      "id": "uc_search_wood",
+      "type": "UserChoice",
+      "output": "ev_search_wood"
+    },
+    {
+      "id": "ev_search_wood",
+      "type": "Event",
+      "outputs": ["rq_wood", "uc_wood"]
+    },
+    {
+      "id": "rq_wood",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_wood_big"
+    },
+    {
+      "id": "end_wood_big",
+      "type": "End",
+      "rewards": {
+        "wood": 20
+      }
+    },
+    {
+      "id": "uc_wood",
+      "type": "UserChoice",
+      "output": "end_wood_small"
+    },
+    {
+      "id": "end_wood_small",
+      "type": "End",
+      "rewards": {
+        "wood": 10
+      }
+    },
+    {
+      "id": "uc_search_iron",
+      "type": "UserChoice",
+      "output": "ev_goto_mine"
+    },
+    {
+      "id": "ev_goto_mine",
+      "type": "Event",
+      "outputs": ["rq_iron", "uc_iron"]
+    },
+    {
+      "id": "rq_iron",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_iron_big"
+    },
+    {
+      "id": "end_iron_big",
+      "type": "End",
+      "rewards": {
+        "iron_ore": 20
+      }
+    },
+    {
+      "id": "uc_iron",
+      "type": "UserChoice",
+      "output": "end_iron_small"
+    },
+    {
+      "id": "end_iron_small",
+      "type": "End",
+      "rewards": {
+        "iron_ore": 10
+      }
+    },
+    {
+      "id": "uc_explore_beach",
+      "type": "UserChoice",
+      "output": "ev_enter_beach"
+    },
+    {
+      "id": "ev_enter_beach",
+      "type": "Event",
+      "outputs": ["uc_goto_herbs", "uc_search_salt_water"]
+    },
+    {
+      "id": "uc_goto_herbs",
+      "type": "UserChoice",
+      "output": "ev_hemp"
+    },
+    {
+      "id": "ev_hemp",
+      "type": "Event",
+      "outputs": ["rq_hemp", "uc_hemp"]
+    },
+    {
+      "id": "rq_hemp",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_hemp_big"
+    },
+    {
+      "id": "end_hemp_big",
+      "type": "End",
+      "rewards": {
+        "hemp": 20
+      }
+    },
+    {
+      "id": "uc_hemp",
+      "type": "UserChoice",
+      "output": "end_hemp_small"
+    },
+    {
+      "id": "end_hemp_small",
+      "type": "End",
+      "rewards": {
+        "hemp": 10
+      }
+    },
+    {
+      "id": "uc_search_salt_water",
+      "type": "UserChoice",
+      "output": "ev_salt_water"
+    },
+    {
+      "id": "ev_salt_water",
+      "type": "Event",
+      "outputs": ["rq_bowl", "uc_bowl"]
+    },
+    {
+      "id": "rq_bowl",
+      "type": "ItemRequired",
+      "requirements": {
+        "bowl": 1
+      },
+      "output": "end_salt_water_big"
+    },
+    {
+      "id": "end_salt_water_big",
+      "type": "End",
+      "rewards": {
+        "salt_water": 10
+      }
+    },
+    {
+      "id": "uc_bowl",
+      "type": "UserChoice",
+      "output": "end_salt_water_small"
+    },
+    {
+      "id": "end_salt_water_small",
+      "type": "End",
+      "rewards": {
+        "salt_water": 5
+      }
+    },
+    {
+      "id": "uc_goto_plains",
+      "type": "UserChoice",
+      "output": "ev_enter_plains"
+    },
+    {
+      "id": "ev_enter_plains",
+      "type": "Event",
+      "outputs": ["uc_search_cereal", "uc_search_cotton", "uc_search_fruit"]
+    },
+    {
+      "id": "uc_search_cereal",
+      "type": "UserChoice",
+      "output": "ev_search_cereal"
+    },
+    {
+      "id": "ev_search_cereal",
+      "type": "Event",
+      "outputs": ["rq_cereal", "uc_cereal"]
+    },
+    {
+      "id": "rq_cereal",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_cereal_big"
+    },
+    {
+      "id": "end_cereal_big",
+      "type": "End",
+      "rewards": {
+        "cereal": 20
+      }
+    },
+    {
+      "id": "uc_cereal",
+      "type": "UserChoice",
+      "output": "end_cereal_small"
+    },
+    {
+      "id": "end_cereal_small",
+      "type": "End",
+      "rewards": {
+        "cereal": 10
+      }
+    },
+    {
+      "id": "uc_search_cotton",
+      "type": "UserChoice",
+      "output": "ev_search_cotton"
+    },
+    {
+      "id": "ev_search_cotton",
+      "type": "Event",
+      "outputs": ["rq_cotton", "uc_cotton"]
+    },
+    {
+      "id": "rq_cotton",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_cotton_big"
+    },
+    {
+      "id": "end_cotton_big",
+      "type": "End",
+      "rewards": {
+        "cotton": 20
+      }
+    },
+    {
+      "id": "uc_cotton",
+      "type": "UserChoice",
+      "output": "end_cotton_small"
+    },
+    {
+      "id": "end_cotton_small",
+      "type": "End",
+      "rewards": {
+        "cotton": 10
+      }
+    },
+    {
+      "id": "uc_search_fruit",
+      "type": "UserChoice",
+      "output": "ev_fruit"
+    },
+    {
+      "id": "ev_fruit",
+      "type": "Event",
+      "outputs": ["rq_fruit", "uc_fruit"]
+    },
+    {
+      "id": "rq_fruit",
+      "type": "ItemRequired",
+      "requirements": {
+        "tools": 1
+      },
+      "output": "end_fruit_big"
+    },
+    {
+      "id": "end_fruit_big",
+      "type": "End",
+      "rewards": {
+        "fruit": 10
+      }
+    },
+    {
+      "id": "uc_fruit",
+      "type": "UserChoice",
+      "output": "end_fruit_small"
+    },
+    {
+      "id": "end_fruit_small",
+      "type": "End",
+      "rewards": {
+        "fruit": 5
+      }
+    }
+  ]
+}

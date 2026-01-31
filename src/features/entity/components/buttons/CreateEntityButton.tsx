@@ -1,5 +1,6 @@
-import { useActionsLocales } from '@/hooks/useLocales';
 import { Button } from '@gatewatcher/skin';
+
+import { useActionsLocales } from '@/hooks/useLocales';
 
 export const CreateEntityButton = () => {
   const { t } = useActionsLocales();
